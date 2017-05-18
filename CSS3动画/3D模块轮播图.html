@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>长方体3D轮播图</title>
+	<style>
+		*{
+			margin: 0;
+			padding:0;
+
+		}
+		body{
+			perspective: 500px;
+
+		}
+		ul li img{
+			width: 200px;
+			height: 200px;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			box-sizing: border-box;
+			margin: 100px auto;
+			position: relative;
+			transform: rotateX(0deg) rotateY(0deg) ;
+			transform-style: preserve-3d;
+			animation: sport 5s linear 0s infinite normal;
+		}
+		ul li{
+			position: absolute;
+			top: 0;
+			left: 0;
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			font-size: 60px;
+			text-align: center;
+			line-height: 200px;
+		}
+		ul li:nth-child(1){
+			background: skyblue;
+			transform:rotateX(90deg) translateZ(100px) scale(2,1);
+		}
+		ul li:nth-child(2){
+			background: red;
+			transform: rotateX(180deg) translateZ(100px)  scale(2,1);
+		}
+		ul li:nth-child(3){
+			background: green;
+			transform: rotateX(270deg) translateZ(100px)  scale(2,1);
+		}
+		ul li:nth-child(4){
+			background: yellow;
+			transform: rotateX(360deg) translateZ(100px)  scale(2,1);
+		}
+		ul li:nth-child(5){
+			background: pink;
+			transform:rotateY(90deg) translateZ(200px) ;
+		}
+		ul li:nth-child(6){
+			background: #ccc;
+			transform: rotateY(-90deg) translateZ(200px) ;
+		}
+		@keyframes sport{
+			from{
+
+				transform:rotateX(0deg);
+			}
+			to{
+				transform:rotateX(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+<ul>
+	<li><img src="1.jpg" alt=""></li>
+	<li><img src="3.jpg" alt=""></li>
+	<li><img src="4.jpg" alt=""></li>
+	<li><img src="5.jpg" alt=""></li>
+	<li>5</li>
+	<li>6</li>
+</ul>
+	
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{
+			width: 100px;
+			height: 100px;
+			margin:100px auto;
+			text-align: center;
+			line-height: 100px;
+	
+		}
+		#div2{
+			list-style: none;
+			margin:100px auto;
+			width: 200px;
+			height: 200px;
+			background: skyblue;
+			line-height: 50px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="div1">点我</div>
+	<div id="div2">
+	  <ul id="ul1">
+	  	<li class="aa">1</li>
+		<li>2</li>
+		<li class="aa">3</li>
+		<li>4</li>
+	  </ul>
+		
+	</div>
+	<ul id="ul2">
+	  	<li class="aa bb">1</li>
+		<li>2</li>
+		<li class="aa">3</li>
+		<li>4</li>
+	  </ul>
+	<script>
+	var	oDiv=document.getElementById('div1');
+	var oDiv2=document.getElementsByTagName('li');
+	// var li=document.getElementsByClassName('lo');IE8及以下版本浏览器不支持该语法。DOM3语法
+	oDiv.onmouseover=function(){	
+		oDiv.style.background='red';	  
+	}
+	oDiv.onmouseout=function(){
+		oDiv.style.background='#ccc';
+	};
+	oDiv2[1].style.background='pink';
+
+
+
+
+    function getClass(claName,context){
+    	var result=[];
+    	// if(context==undefined){
+    	// 	var arr=document.getElementsByTagName('*');
+    	// }else{
+    	// 	var arr=context.getElementsByTagName('*');
+    	// }
+    	context=context || document;
+    	var arr=context.getElementsByTagName('*');
+    	for(var i=0;i<arr.length;i++){
+    		if(arr[i].className.indexOf(claName)!=-1){
+    			result.push(arr[i]);
+    		}
+    	}
+          return result;
+    }
+
+ 	var oul=document.getElementById('ul1')
+    var arr1=getClass('aa',oul);
+
+	for(var i=0;i<arr1.length;i++){
+	arr1[i].style.background='blue';
+}
+	</script>
+</body>
+</html>

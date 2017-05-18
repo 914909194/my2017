@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			position: absolute;
+			left: 0;
+			top:0;
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+			animation-name: sport;
+			animation-duration: 5s;
+
+		}
+		
+		
+		@keyframes sport{
+			0%{
+				left: 0;
+				top:0;
+
+			}
+			25%{
+				left: 300px;
+				top:0;
+
+			}
+			50%{
+				left: 300px;
+				top:300px;
+
+			}
+			75%{
+				left: 0px;
+				top:300px;
+
+			}
+			100%{
+				left: 0;
+				top:0px;
+
+			}
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			margin: 100px auto;
+			animation-name: myROtate;
+			animation-duration: 5s;
+			animation-delay: 2s;
+			/*指定动画等待状态和结束状态的样式
+			取值：none不做任何样式
+					forwards让元素结束状态的时候保持动画最后帧的样式
+					backwards让元素等待的时候显示动画第一帧的样式
+					both让元素等待状态显示第一帧样式和结束状态显示动画最后一帧的样式
+				   */
+			animation-fill-mode: backwards;
+		}
+		/*动画模块连写格式
+			animation:动画名称 动画时长 动画运动速度 延迟时间 执行次数 往返动画;
+		*/
+		@keyframes myROtate{
+			0%{
+				transform: rotate(10deg);
+			}
+			50%{
+				transform: rotate(50deg);
+			}
+			100%{
+				transform: rotate(70deg);
+			}
+
+		}
+
+		/*div:hover{
+			margin-left: 500px;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D音乐播放器</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background: url(5.jpg) no-repeat;
+			background-size: cover;
+			overflow: hidden;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+		/*	border: 1px solid #000;*/
+			box-sizing: border-box;
+			position: absolute;
+			bottom:100px;
+			left: 50%;
+			margin-left: -100px;
+
+			/*transform: rotateX(-10deg) ;*/
+			transform-style: preserve-3d;
+			animation: sport 10s linear 0s infinite normal;
+
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+		ul:hover li img{
+			opacity: 0.5;
+		}
+		ul li:hover img{
+			opacity: 1;
+		}
+		ul li{
+		
+			position: absolute;
+			left: 0;
+			top: 0;
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			/*font-size: 60px;*/
+			/*text-align: center;*/
+			/*line-height: 200px;*/
+			/*background: black;*/
+		}
+		ul li img{
+			width: 200px;
+			height: 200px;
+			border: 5px solid skyblue;
+			box-sizing: border-box;
+		}
+		@keyframes sport{
+			from{
+				transform: rotateX(-10deg) rotateY(0deg)  ;
+
+			}
+			to{
+				transform:  rotateX(-10deg) rotateY(360deg);
+			}
+
+		}
+		ul li:nth-child(1){
+			
+			transform:rotateY(60deg) translateZ(200px);
+		}
+		ul li:nth-child(2){
+			
+			transform: rotateY(120deg) translateZ(200px) ;
+		}
+		ul li:nth-child(3){
+			
+			transform: rotateY(180deg) translateZ(200px) ;
+		}
+		ul li:nth-child(4){
+			
+			transform: rotateY(240deg) translateZ(200px);
+		}
+		ul li:nth-child(5){
+			
+			transform:rotateY(300deg) translateZ(200px) ;
+		}
+		ul li:nth-child(6){
+			
+			transform: rotateY(360deg) translateZ(200px) ;
+		}
+		.xin{
+			width: 130px;
+			height: 130px;
+			position: absolute;
+			left: 100px;
+			bottom:100px;
+			animation: move 10s linear 0s infinite normal;
+		}
+		@keyframes move{
+			0%{ 
+				left: 100px;
+				bottom: 100px;
+				opacity: 1;
+			}
+			20%{
+				left: 300px;
+				bottom: 300px;
+				opacity: 0;
+			}
+			40%{
+				left: 500px;
+				bottom: 500px;
+				opacity: 1;
+			}
+			60%{
+				left: 800px;
+				bottom: 300px;
+				opacity: 0;
+			}
+			80%{
+				left: 1200px;
+				bottom: 100px;
+				opacity: 1;
+			}
+			100%{
+				left: 800px;
+				bottom: -200px;
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="img/zjl1.jpg" alt=""></li>
+		<li><img src="img/zjl3.jpg" alt=""></li>
+		<li><img src="img/zjl4.jpg" alt=""></li>
+		<li><img src="img/zjl5.jpg" alt=""></li>
+		<li><img src="img/zjl6.jpg" alt=""></li>
+		<li><img src="img/zjl7.jpg" alt=""></li>
+	</ul>
+	<img src="images/g99630-1.jpg" alt="" class="xin">
+	<audio src="music/周杰伦 - 青花瓷.mp3" autoplay="autoplay" loop="loop"></audio>
+</body>
+</html>
