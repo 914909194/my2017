@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+	margin: 0;
+	padding: 0;
+	}
+	ul, ol{
+	list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	img{
+		border: 0;
+	}
+	#menu-box{
+			border:1px solid #ccc;
+			width: 200px;
+	}
+	.ll{
+		width: 200px;
+		line-height: 30px;
+		background: skyblue;
+		border:1px solid #ccc;
+	}
+		
+	.ll ul{
+		background: yellow;
+		width: 200px;
+		display: none;
+		}		
+	</style>
+</head>
+<body>
+	<ul id="menu-box">
+		<li class="ll">
+			<h3>点我</h3>
+			<ul class="ol">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+	   		</ul>
+		</li>
+		<li class="ll">
+			<h3>点我</h3>
+			<ul class="ol">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+	   		</ul>
+		</li>
+	
+ 	</ul>
+	<script>
+		 // function getClass(claName,context){
+   //  		var result=[];
+   //  		context=context || document;
+   //  		var arr=context.getElementsByTagName('*');
+   //  		for(var i=0;i<arr.length;i++){
+   //  			if(arr[i].className.indexOf(claName)!=-1){
+   //  			result.push(arr[i]);
+   //  		}
+   //  	}
+   //        return result;
+   //  }
+    
+
+    //var aLi = getClass('ll',oMenuBox);
+   
+    var aH3=document.getElementsByTagName('h3'),oMenuBox = document.getElementById('menu-box'),
+    	aUl=oMenuBox.getElementsByTagName('ul');
+
+	    for(var i=0;i<aH3.length;i++){
+	    	aH3[i].index=i;
+	    	aH3[i].onclick=function(){
+	    	var oUl=aUl[this.index];	
+	    	if(oUl.style.display=='none' || oUl.style.display==''){
+	    		oUl.style.display='block';
+	    	}else{
+	    		oUl.style.display='none';
+	    	}
+		}
+	 }
+
+	 // for(var i=0;i<aH3.length;i++){
+	 // 	aH3[i].index=i;
+	 // 	aH3[i].onclick=function(){
+	 // 		var oUl=aUl[this.index];
+	 // 		if(oUl.style.display=='none'||oUl.style.display==''){
+	 // 			oUl.style.display=='block'
+	 // 		}else{
+	 // 			oUl.style.display=='none'
+	 // 		}	
+
+	 // 	}
+	 // }
+
+
+
+
+
+
+
+
+
+
+	  //   	aLi[i].onclick=function(){
+	  //   	var oUL=this.getElementsByTagName('ul')[0];
+			// if(oUL.style.display=='none' || oUL.style.display==''){
+	  //   		oUL.style.display='block';
+	  //   	}else{
+	  //   		oUL.style.display='none';
+	  //   	}
+
+
+
+
+
+
+	    	// if(aUL.style.display=='block'){
+	    	// 	aUL.style.display='none';
+	    	// }else{
+	    	// 	aUL.style.display='block';
+	    	// }
+	    
+	    	//}
+		
+	    
+		
+		
+	</script>
+	</body>
+</html>

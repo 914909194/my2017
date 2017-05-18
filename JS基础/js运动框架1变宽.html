@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运动框架1</title>
+	<style>
+		div{
+			width: 150px;
+			height: 100px;
+			background: skyblue;
+			margin:20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+	<script>
+	 	// var timer=null;
+		var oDiv=document.getElementsByTagName('div');
+		function startMove(obj,iTarget){
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				var speed =(iTarget-obj.offsetWidth)/6;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(obj.offsetWidth==iTarget){
+					clearInterval(obj.timer);
+				}else{
+					obj.style.width=obj.offsetWidth+speed+'px';
+				}
+			},30)
+		}
+		for(var i=0;i<oDiv.length;i++){
+			oDiv[i].timer=null
+			oDiv[i].onmouseover=function(){
+				startMove(this,300)
+			}
+			oDiv[i].onmouseout=function(){
+				startMove(this,150)
+			}
+		}
+
+
+
+	</script>
+</body>
+</html>

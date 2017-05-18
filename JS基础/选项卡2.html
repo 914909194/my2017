@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#ul1{
+			list-style: none;
+	
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+		}
+		#ul1 li{
+			cursor: pointer;
+			float: left;
+			background: #7c7c7c;
+			width: 20px;
+			height: 20px;
+			margin-left: 5px;
+			text-align: center;
+			line-height: 20px;
+			color: skyblue;
+		}
+		#ul0 li{
+			overflow: hidden;
+		}
+		#ul0 img{
+			border: 0;
+			width: 500px;
+			height: 0px;
+			
+		}
+		#ul0 .active{
+			height: 300px;
+		}
+		/*#ul0 .bb{
+			display: block;
+		}*/
+		#ul2{
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
+		}
+		#ul2 li{
+			cursor: pointer;
+			float: right;
+		}
+		#ul2 img{
+			width: 40px;
+			height: 40px;
+		}
+		#div1{
+			width: 500px;
+			height: 300px;
+			overflow: hidden;
+			margin: 100px auto;
+			position: relative;
+		}
+		#div1 .active{
+			background: #efefef;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<ul id="ul0">
+			<li class="active"><img src="img/2.jpg" alt="" ></li>
+			<li class=""><img src="img/3.jpg" alt=""></li>
+			<li class=""><img src="img/5.jpg" alt=""></li>
+			<li class=""><img src="img/6.jpg" alt=""></li>
+		</ul>	
+		<ul id="ul1">
+			<li class="active aa">1</li>
+			<li class="aa">2</li>
+			<li class="aa">3</li>
+			<li class="aa">4</li>
+		</ul>
+		<ul id="ul2">
+			<li><img src="img/right.jpg" alt=""></li>
+			<li><img src="img/left.jpg" alt=""></li>
+		</ul>
+	</div>
+	<script>
+		function getStyle(obj,name){
+			if(obj.currentStyle){
+				return obj.currentStyle[name];
+			}
+			else{
+				return getComputedStyle(obj,false)[name];
+			}
+		}//获取元素属性值函数
+
+		function startMove(obj,attr,iTarget){
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				var cur=0;
+				if(attr=='opacity'){
+					cur=Math.round(parseFloat(getStyle(obj,attr))*100);
+				}
+				else{
+					cur=parseInt(getStyle(obj,attr));
+				}
+				
+				var speed=(iTarget-cur)/6;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(cur==iTarget){
+					clearInterval(obj.timer);
+				}else{
+					if(attr=='opacity'){
+						obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+						obj.style.opacity=(cur+speed)/100;
+					}
+					else{
+						obj.style[attr]=cur+speed+'px'
+					}
+				}
+			},30)
+		}//任意值运动框架函数3个参数（元素，变化属性，变化目标）
+
+	 	function getClass(claName,context){
+		    	var result=[];
+		    	context=context || document;
+		    	var arr=context.getElementsByTagName('*');
+		    	for(var i=0;i<arr.length;i++){
+		    		if(arr[i].className.indexOf(claName)!=-1){
+		    			result.push(arr[i]);
+		    		}
+		    	}
+		          return result;
+		}
+		var oUl0=document.getElementById('ul0');
+		var oUl1=document.getElementById('ul1');
+		var oUl2=document.getElementById('ul2');
+		var aLi0=oUl0.getElementsByTagName('li');
+		var aLi1=getClass('aa',oUl1);
+		var aLi2=oUl2.getElementsByTagName('li');
+
+		// for(var i=0;i<aLi1.length;i++){
+		// 	aLi1[i].index=i;
+		// 	aLi1[i].onmouseover=function(){
+		// 	// 	for(var j=0;j<aLi0.length;j++){
+		// 	// 	// aLi0[j].style.display='none';
+		// 	// 	aLi1[j].className='';
+		// 	// 	aLi0[j].className='';
+		// 	// 	}
+		// 	// 	this.className='active';
+		// 	// 	aLi0[this.index].className='active'
+		// 	// }
+
+		// 	this.style.height=0;
+		// 	startMove(this,'height',300);
+
+
+		// }
+		// }
+
+		// aLi2[0].onclick=function(){	
+		// 	// clearInterval(timer);
+		// 	for(var i=0;i<aLi0.length;i++){	
+		// 		if(aLi0[i].className=='active'){
+		// 			aLi0[i].className='';
+		// 			aLi1[i].className='';
+		// 			var b=i;
+		// 		}
+		// 	}
+		// 	if(b==3){
+		// 	 aLi0[0].className='active';
+		// 	 aLi1[0].className='active';
+		// 	}else{
+		// 	 aLi0[b+1].className='active';
+		// 	 aLi1[b+1].className='active';
+		// 	}		
+		// }
+
+		// aLi2[1].onclick=function(){	
+		// 	// clearInterval(timer);
+		// 	for(var i=0;i<aLi0.length;i++){	
+		// 		if(aLi0[i].className=='active'){
+		// 			aLi0[i].className='';
+		// 			aLi1[i].className='';
+		// 			var b=i;		
+		// 		}
+		// 	}
+		// 	if(b==0){
+		// 	 aLi0[3].className='active';
+		// 	 aLi1[3].className='active';
+		// 	}else{
+		// 	 aLi0[b-1].className='active';
+		// 	 aLi1[b-1].className='active';		
+		// 	}			
+		// }
+
+		// var timer=setInterval(function(){
+		// 	for(var i=0;i<aLi0.length;i++){	
+		// 	if(aLi0[i].className=='active'){
+		// 		aLi0[i].className='';
+		// 		aLi1[i].className='';
+		// 		var b=i;
+		// 		}
+		// 	}
+		// 	if(b==3){
+		// 	 aLi0[0].className='active';
+		// 	 aLi1[0].className='active';
+		// 	}else{
+		// 	 aLi0[b+1].className='active';
+		// 	 aLi1[b+1].className='active';
+		// 	}		
+		// 	},3000);
+		
+
+	</script>
+</body>
+</html>

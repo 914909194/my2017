@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点</title>
+</head>
+<body>
+	<div id="div1">	
+		<div id="div2"></div>
+		<div id="div3"></div>
+	</div>
+	<a id='a1' href="#"></a>
+	<ul id="ul1">
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+	</ul>
+</body>
+<script>
+	var oDiv=document.getElementById('div1');
+	var oDiv2=document.getElementById('div2');
+	var oDiv3=document.getElementById('div3');
+	var oUl=document.getElementById('ul1');
+	var oA=document.getElementById('a1');
+	// function next(elem){
+	// 	if(oDiv.nextElementSiling){
+	// 		return oDiv.nextElementSibling;
+	// 	}else{
+	// 		return oDiv.nextSibling;
+	// 	}
+	// }
+	function next(elem){
+		do{
+			elem=elem.nextSibling;
+		}while(elem&&elem.nodeType!=1);
+		return elem;
+	}//寻找下一个兄弟节点
+	function previous(elem){
+		do{
+			elem=elem.previousSibling;
+		}while(elem&&elem.nodeType!=1);
+		return elem;
+	}//寻找上一个兄弟节点
+
+	function first(elem){
+		elem=elem.firstChild;
+		if(elem&&elem.nodeType!=1){//文本节点是3 元素是1 属性是2
+			elem=next(elem);
+		}
+		return elem;
+	}//寻找第一个子节点
+
+	function last(elem){
+		elem=elem.lastChild;
+		if(elem&&elem.nodeType!=1){
+			elem=previous(elem);
+		}
+		return elem;
+	}//寻找最后一个子节点
+	console.log(oDiv.children)//虽然不是W3c标准语言 但所有浏览器都支持该语法
+
+	console.log(previous(oDiv3));
+	// oUl.appendChild(first(oUl));
+	// oUl.removeChild(first(oUl));
+
+
+	var oP=document.createElement('p');//创建一个元素
+	oP.innerHTML='2222'//添加元素内容
+	document.body.appendChild(oP); //插入一个元素到body
+
+</script>
+</html>

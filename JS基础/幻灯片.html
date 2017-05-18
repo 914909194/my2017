@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>幻灯片</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		img{
+			width: 500px;
+			height: 300px;
+			border: 0;
+			display:block;/*去掉图片之间的间距方法*/
+
+		}
+		#div1{
+			width: 500px;
+			height: 300px;
+			margin:100px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		#ul1{
+			list-style: none;
+			position: absolute;
+		}
+		#ul1 li{
+
+		}
+		#ul2{
+			list-style: none;
+			float: left;
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			margin-right: 5px;
+		}
+		#ul2 li{	
+			cursor: pointer;
+			float: left;
+			background: #7c7c7c;
+			color: white;
+			width: 20px;
+			height: 20px;
+			margin-left: 5px;
+			text-align: center;
+			line-height: 20px;
+		}
+		#ul2 li.active{
+			background: skyblue;
+		}
+	</style>
+	<script src='js/move.js'></script>
+</head>
+<body>
+	<div id="div1">
+		<ul id="ul1" >
+			<li class="active"><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/2.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>
+			<li><img src="img/5.jpg" alt=""></li>
+			<li><img src="img/6.jpg" alt=""></li>
+		</ul>
+		<ul id="ul2">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+
+	<script>
+		var oDiv=document.getElementById('div1');
+		var oUl1=document.getElementById('ul1');
+		var aImg=oUl1.getElementsByTagName('li')
+		var oUl2=document.getElementById('ul2');
+		var aBtn=oUl2.getElementsByTagName('li')
+		var now=0;
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].index=i;
+			aBtn[i].onmouseover=function(){
+				now=this.index;
+				tab();
+			}
+		}
+		function tab(){
+			for(var j=0;j<aBtn.length;j++){
+				aBtn[j].className='';
+			}
+			aBtn[now].className='active';
+			startMove(oUl1,{top:-300*now})	
+		}
+
+		function next(){
+			now++;
+			if(now==aBtn.length){
+				now=0;
+			}
+			tab();
+		}
+
+		var timer=setInterval(next,2000);
+		oDiv.onmouseover=function(){
+			clearInterval(timer);
+		};	
+		oDiv.onmouseout=function(){
+			timer=setInterval(next,2000)
+		};
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		img{
+			width: 680px;
+			height: 400px;
+		}
+		#contend{
+			width: 680px;
+			margin:100px auto;
+			position: relative;
+		}
+		#img-box img{
+			
+			display: none;
+		}
+		#img-box img.selected{
+			display: block;
+		}
+		#tab-box{
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+		}
+
+		#tab-box li{
+			cursor: pointer;
+			float: left;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			background: #000;
+			color: #fff;
+			margin-right: 5px;
+		}
+		#tab-box li.selected{
+			background: skyblue;
+		}
+		#arr{
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
+		
+
+		}
+		#arr span{
+			background: #000;
+			display: inline-block;
+			text-align: center;
+			line-height: 30px;
+			width: 30px;
+			height: 30px;
+			color: #fff;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="contend">
+		<div id="img-box">
+			<img class="selected" src="img/3.jpg" alt="">
+			<img src="img/2.jpg" alt="">
+			<img src="img/6.jpg" alt="">
+			<img src="img/5.jpg" alt="">
+		</div>
+		<ul id="tab-box">
+			<li class="selected">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id="arr">
+			<span>&lt;</span>
+			<span>&gt;</span>
+		</div>
+	</div>
+		<script>
+
+			var oContend=document.getElementById('contend');
+			var aLi=oContend.getElementsByTagName('li');
+			var aImg=oContend.getElementsByTagName('img');
+			var aSpan=oContend.getElementsByTagName('span');
+			var timer;
+			var iNow=0;
+
+			function changeImg(idx){
+				for(var j=0;j<aLi.length;j++){
+					aLi[j].className='';
+					aImg[j].className='';
+				}
+					aLi[idx].className='selected';
+					aImg[idx].className='selected'
+			}
+
+			
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].index=i;
+				aLi[i].onmouseover=function(){
+					changeImg(this.index);
+					 iNow=this.index;
+				}
+			}
+
+			
+			aSpan[1].onclick=function(){	
+				iNow++;
+				// if(iNow==aLi.length){
+				// 	iNow=0;
+			 // 	}
+			 	iNow=iNow%aImg.length;
+			 	changeImg(iNow);			
+			};
+
+
+			aSpan[0].onclick=function(){
+			 	iNow--;
+			 	if(iNow==-1){
+			 		iNow=aLi.length-1;
+			 	}
+				changeImg(iNow); 				
+			};
+
+
+			// var timer=setInterval(function(){
+
+			// 	aSpan[1].onclick();		
+			
+			// },2000);
+
+			oContend.onmouseover=function(){
+					clearInterval(timer);
+			};	
+
+			oContend.onmouseout=function(){
+				run();
+			};	
+
+			function run(){
+				timer=setInterval(function(){
+
+				aSpan[1].onclick();		
+			
+				},2000);
+			}
+
+			run();
+
+		</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运动框架2</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			opacity: 0.3;
+			filter: alpha(opacity:30);
+			margin:20px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+	//多物体运动时所有东西都不能共用，否则会出现问题
+		// var alpha=30;
+		var aDiv=document.getElementsByTagName('div')
+		function startMove(obj,iTarget){
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				var speed=(iTarget-obj.alpha)/6;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(obj.alpha==iTarget){
+					clearInterval(obj.timer);
+				}else{
+					obj.alpha+=speed;
+					obj.style.filter='alpha(opacity:'+obj.alpha+')'
+					obj.style.opacity=obj.alpha/100;
+				}
+			},30)
+		}
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].alpha=30;
+			aDiv[i].timer=null;
+			aDiv[i].onmouseover=function(){
+				startMove(this,100);
+			}
+			aDiv[i].onmouseout=function(){
+				startMove(this,30);
+			}
+		}
+	</script>
+</body>
+</html>

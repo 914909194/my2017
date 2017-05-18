@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<script src="js/jquery-1.12.4.js" type="text/javascript"></script>
+	<style>
+		p{
+			cursor: pointer;
+		}
+		.tip{
+			border:1px solid #000;
+			font-size: 15px;
+			color: red;
+			border-radius: 5px;
+			background: skyblue;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<p><a href="#" class="aa" title="这是我的提示一">提示1</a></p>
+	<p><a href="#" class="aa" title="这是我的提示二">提示2</a></p>
+	<p><a href="#" title="提示一">提示1</a></p>
+	<p><a href="#" title="提示一">提示1</a></p>
+
+
+	<script>
+		$('.aa').on('mouseover',function(e){
+			var $tip=$('<span class="tip">'+this.title+'</span>').css({
+				left:e.pageX+20,
+				top:e.pageY+20
+			})
+			this.title='';
+			$('body').append($tip);
+		})
+		$('.aa').on('mouseout',function(e){
+			this.title=$('.tip').html();
+			$('.tip').remove();
+		})
+		$('.aa').on('mousemove',function(e){
+			$('.tip').css({
+				left:e.pageX+20,
+				top:e.pageY+20
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标事件</title>
+	<style>
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+		}
+
+	</style>
+	<script src='js/move.js'></script>
+</head>
+<body>
+	<div id="div1"></div>
+	<script>
+	document.onmousemove=function(ev){
+
+		var oEvent=ev||event;
+		var oDiv=document.getElementById('div1');
+		oDiv.style.left=oEvent.clientX+'px';
+		oDiv.style.top=oEvent.clientY+'px'
+	}
+	</script>
+</body>
+</html>
