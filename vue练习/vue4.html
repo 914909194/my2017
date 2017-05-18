@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+	{{firstName}}+{{lastName}}={{fullName}}
+</div>
+	<script src='js/vue.js'></script>
+	<script>
+		var vn=new Vue({
+			el:'#app',
+			data:{
+				firstName:'zhang',
+				lastName:'san'
+			},
+			computed:{
+				// fullName:function(){
+				// 	return this.firstName+' '+this.lastName;
+				// }
+				fullName:{
+					get:function(){
+						return this.firstName+' '+this.lastName;
+					},
+					set:function(val){
+						var arr=val.split(' ');
+						this.firstName=arr[0];
+						this.lastName=arr[1];
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

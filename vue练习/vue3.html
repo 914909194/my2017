@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#app{
+			margin:0 auto;
+			width: 500px;
+			
+		}
+		.red{
+			background: red;
+		}
+		.green{
+			background: green;
+		}
+		ul{
+			/*margin:0 auto;*/
+			list-style: none;
+			
+
+		}
+		li{
+			margin:0 auto;
+			line-height: 50px;
+			margin-top: 15px;
+			height: 50px;
+			width: 200px;
+			text-align: center;
+			cursor: pointer;
+			
+		}
+		span{
+			float: right;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<li v-for='obj in arr' :class={red:obj.active,green:!obj.active} @click='change(obj)'>{{obj.name}}:{{obj.price}}</li>
+	</ul>
+	<hr/>
+	<span>{{total()}}</span>
+	
+</div>
+	<script src='js/vue.js'></script>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+				arr:[
+				{name:'aaa',price:452,active:false},
+				{name:'bbb',price:252,active:false},
+				{name:'ccc',price:332,active:false},
+				{name:'ddd',price:152,active:false},
+				{name:'eee',price:322,active:false},
+				{name:'fff',price:212,active:false}
+				]
+			},
+			methods:{
+				change:function(obj){
+					obj.active=!obj.active;
+					// this.total();
+					// 可以不用调用当前对象的total方法由于change方法与total方法相互依赖所以当执行change方法时改变了arr数组里的内容 会自动再次执行total方法
+				},
+				total:function(){
+					var num=0;
+					for(var i=0;i<this.arr.length;i++){
+						if(this.arr[i].active){
+							num+=this.arr[i].price;
+						}
+					}
+					return num;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

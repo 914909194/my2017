@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+	<input type="text" v-model='msg' @keyup='filter'>
+	<button @click='add'>add</button>
+	<ul>
+		<li v-for='item in itemshow'>{{item}}</li>
+	</ul>
+</div>
+	<script src='js/vue.js'></script>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+				msg:'',
+				items:[],
+				itemshow:[]
+			},
+			methods:{
+				add:function(){
+					
+					if(this.msg!=''){
+						this.items.push(this.msg);
+						this.msg='';
+						this.items.sort(function(a,b){
+							return a>b;
+						});
+						this.itemshow=this.items;
+					}
+				},
+				filter:function(){
+
+					var _msg=this.msg;
+					var arr=this.items.filter(function(val){
+						return val.indexOf(_msg)>-1;
+					})
+					this.itemshow=arr;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

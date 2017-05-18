@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue练习</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model='aaa'>
+		<span>{{aaa}}</span>	
+	</div>
+	<script src='js/vue.js'></script>
+	<script>
+		var vn=new Vue({
+			el:'#app',
+			data:{
+				msg:'天王盖地虎',
+				aaa:'天王盖地虎'
+			}
+		});
+	</script>
+</body>
+</html>
