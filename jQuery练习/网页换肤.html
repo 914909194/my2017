@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页换肤</title>
+	<style>
+		*{
+    margin:0px;
+    padding:0px;
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#div_side_0,#div_side_1
+{
+    float:left;
+    width:120px;
+    height:450px;
+    }
+#skin
+{
+    margin:10px;
+    padding:5px;
+	width:210px;
+    padding-right:0px;
+	list-style:none;
+    border: 1px solid #CCCCCC;
+	overflow:hidden;
+    }
+#skin li{
+	float:left;
+    margin-right:5px;
+    width:15px;
+    height:15px;
+	text-indent:-999px;
+	overflow:hidden;
+	display:block;
+	cursor:pointer;
+	background-image:url(theme.gif);
+}
+#skin_0{
+	background-position:0px 0px;
+}
+#skin_1{
+	background-position:15px 0px;
+}
+#skin_2{
+	background-position:35px 0px;
+}
+#skin_3{
+	background-position:55px 0px;
+}
+#skin_4{
+	background-position:75px 0px;
+}
+#skin_5{
+	background-position:95px 0px;
+}
+#skin_0.selected{
+	background-position:0px 15px !important;
+}
+#skin_1.selected{
+	background-position:15px 15px !important;
+}
+#skin_2.selected{
+	background-position:35px 15px !important;
+}
+#skin_3.selected{
+	background-position:55px 15px !important;
+}
+#skin_4.selected{
+	background-position:75px 15px !important;
+}
+#skin_5.selected{
+	background-position:95px 15px !important;
+}
+.title
+{
+    cursor:pointer;}
+h1{
+   margin:10px;
+   padding:10px 20px;
+   width:60px;
+   color:#ffffff;
+   font-size:14px;
+}
+a:link {
+	text-decoration: none;
+	color: #333333;
+}
+a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+h1{
+   background:#999999;
+}
+	</style>
+	<script src="js/jquery-1.12.4.js" type="text/javascript"></script>
+</head>
+<body>
+	<ul id="skin">
+		<li id="skin_0" title="灰色" class="selected">灰色</li>
+		<li id="skin_1" title="紫色">紫色</li>
+		<li id="skin_2" title="红色">红色</li>
+		<li id="skin_3" title="天蓝色">天蓝色</li>
+		<li id="skin_4" title="橙色">橙色</li>
+		<li id="skin_5" title="淡绿色">淡绿色</li>
+	</ul>
+
+	<div id="div_side_0">
+		<div id="news">
+			<h1 class="title">时事新闻</h1>
+		</div>
+	</div>
+
+	<div id="div_side_1">
+		<div id="game">
+			<h1 class="title">娱乐新闻</h1>
+		</div>
+	</div>
+	<p>说明：本例需使用Firefox才能看到效果，chrome由于安全性限制不允许直接修改cookie
+	</p>
+	<script>
+		$(function(){
+			var $li =$("#skin li");
+			$li.click(function(){
+				switchSkin( this.id );
+			});
+			var cookie_skin = $.cookie( "MyCssSkin");
+			if (cookie_skin) {
+				switchSkin( cookie_skin );
+			}
+		});
+		function switchSkin(skinName){
+			$("#"+skinName).addClass("selected")                 //当前<li>元素选中
+					.siblings().removeClass("selected");  //去掉其它同辈<li>元素的选中
+			$("#cssfile").attr("href","css/"+ skinName +".css"); //设置不同皮肤
+			$.cookie( "MyCssSkin" ,  skinName , { path: '/', expires: 10 });
+		}
+	</script>
+</body>
+</html>
