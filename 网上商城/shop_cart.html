@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" href="fonts/glyphicons/css/glyphicons.css">
+	<link rel="stylesheet" href="css/carousel.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/shop_cart.css">
+	<script src="js/jquery-1.12.4.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="header">
+		<div id="top-nav">
+			<div class="wrapper">
+				<div id="search-box">
+					<span class="glyphicon glyphicon-search"></span>
+				</div>
+				<div id="top-menu">
+					<ul>
+						<li class="follow-us">关注我们</li>
+						<li class="share"><a href="#"><span class="glyphicon glyphicon-star"></span></a> </li>
+						<li class="share"><a href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
+						<li class="share"><a href="#"><span class="glyphicon glyphicon-music"></span></a></li>
+						<li class="share"><a href="#"><span class="glyphicon glyphicon-glass"></span></a></li>
+						<li class="btn login"><a href="#"><span class="glyphicon glyphicon-lock"></span> 登录</a></li>
+						<li class="btn regist"><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="nav">
+			<div class="wrapper">
+				<h1 class="logo">网上商城</h1>
+				<ul class="nav-menu">
+					<li class="selected"> <a href="#">首页</a></li>
+					<li> <a href="#">关于我们</a></li>
+					<li> <a href="#">商城 <span class="arrow"></span></a>
+						<ul class="sub-menu">
+							<li><a href="#">商品详情</a></li>
+							<li><a href="#">商品列表</a></li>
+							<li><a href="#">购物车</a></li>
+						</ul>
+					</li>
+					<li> <a href="#">博客 <span class="arrow"></span></a></li>
+					<li> <a href="#">联系我们</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="content" class="wrapper">
+		<div class="head-car">
+			<h3><span class="glyphicon glyphicon-shopping-cart"> </span>Shopping Cart</h3>
+			<select name="" id=""></select>
+			<!-- <option value="Active">Action</option>
+			<option value="Active">Action</option>
+			<option value="Active">Action</option> -->
+			<label class="strong">With selected:</label>
+		</div>
+		<table  cellspacing="0px" class="table1">
+			<thead class="tr1">
+				<th width="1%"><input id='checkAll' type="checkbox"></th>
+				<th width="2%">No.</th>
+				<th colspan="8"></th>
+				<th width="50">Qty</th>
+				<th width="80">Price</th>
+				<th width="80">VAT</th>
+				<th width="80">TAX incl.</th>	
+			</thead>
+			<tbody>
+				<tr class="selected">
+					<td><input  class='chekbtn' type="checkbox" checked></td>
+					<td>1</td>
+					<td colspan="8" class="td1">
+						<img src="img/11.jpg" alt="">
+						<div class="product1">
+							<a href="#">Product name goes here</a><br>
+							<span class="span1">Product Category</span><br>
+							<a href="#" >Size:<br><span class="span2">3-4Years</span> </a>
+						</div>
+						
+					</td>
+					<td ><input type="text" value="1" class="input1"></td>
+					<td class="td2">$1,000.00</td>
+					<td class="td2">$119.00</td>
+					<td class="td2">$119.00</td>
+				</tr>
+
+				<tr>
+					<td><input class='chekbtn' type="checkbox"></td>
+					<td>2</td>
+					<td colspan="8" class="td1">
+						<img src="img/21.jpg" alt="">
+						<div class="product1">
+							<a href="#">Product name goes here</a><br>
+							<span class="span1">Product Category</span><br>
+							<a href="#" >Size:<br><span class="span2">3-4Years</span> </a>
+						</div>
+						
+					</td>
+					<td ><input type="text" value="1" class="input1"></td>
+					<td class="td2">$1,000.00</td>
+					<td class="td2">$119.00</td>
+					<td class="td2">$119.00</td>
+				</tr>
+
+				<tr>
+					<td><input class='chekbtn' type="checkbox"></td>
+					<td>3</td>
+					<td colspan="8" class="td1">
+						<img src="img/22.jpg" alt="">
+						<div class="product1">
+							<a href="#">Product name goes here</a><br>
+							<span class="span1">Product Category</span><br>
+							<a href="#" >Size:<br><span class="span2">3-4Years</span> </a>
+						</div>
+						
+					</td>
+					<td ><input type="text" value="1" class="input1"></td>
+					<td class="td2">$1,000.00</td>
+					<td class="td2">$119.00</td>
+					<td class="td2">$119.00</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div class="spana">
+			<div class="spanb">
+				<strong>Discount Code:</strong><br>
+				<input type="text"><br>
+				<button>Apply Code</button>
+			</div>
+			<div class="spand">
+				<span class="tot">Total: $1,195.95</span>
+				<button><span class="glyphicon glyphicon-star"></span>Proceed to Payment</button>
+			</div>
+			<div class="spanc">
+				<table>
+					<tr>
+						<td>Subtotal:</td>
+						<td>$1,000.00</td>
+					</tr>
+					<tr>
+						<td>Delivery:</td>
+						<td>$5.00</td>
+					</tr>
+					<tr>
+						<td>VAT:</td>
+						<td>$119.00</td>
+					</tr>
+				</table>
+			</div>
+
+			
+		
+		</div>
+	</div>
+	<div id="footer">
+		<div class="wrapper" style="position: relative;">
+			<div class="quick-links">
+				<h3>QUICK LINKS</h3>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div class="about">
+				<h3>ABOUT</h3>
+				<P>Lorem Ipsum is simply dummy text of the printing and typesetting dustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</P>
+			</div>
+			<div class="blog">
+				<h3>Our blog</h3>
+				<ul>
+					<li><a href="#">What is Lorem lpsum?</a></li>
+					<li><a href="#">What is Lorem lpsum?</a></li>
+					<li><a href="#">What is Lorem lpsum?</a></li>
+					<li><a href="#">What is Lorem lpsum?</a></li>
+					<li><a href="#">What is Lorem lpsum?</a></li>
+				</ul>
+			</div>
+			<div class="contact" style="margin-right:0;float:right">
+				<h3>Contact</h3>
+				<ul class="contact-phone">
+					<li><span class="glyphicon glyphicon-phone"></span>&nbsp01 230 1958</li>
+					<li><span class="glyphicon glyphicon-envelope"></span>&nbspcontact@mosaicpro.biz</li>
+				</ul>
+				<h3 style="margin-top: 20px;">SOCIAL</h3>
+				<ul class="social">
+					<li class="selected">
+						<a href="#">
+							<span class="glyphicon glyphicon-heart"></span>
+						</a>
+					</li>
+					<li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-music"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-glass"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-phone"></span></a></li>
+				</ul>
+			</div>
+			<div class="copy">
+				<p>© 2013 - mosaicpro.biz</p>
+				<span>FLAT KIT</span>
+			</div>
+		</div>
+	</div>
+	<script src='js/common.js'></script>
+	<script src='js/shop_cart.js'></script>
+</body>
+</html>

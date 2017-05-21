@@ -1,0 +1,169 @@
+#content{
+	padding-top: 88px;
+
+}
+#content .head-car{
+	padding: 15px 0;
+}
+#content .head-car h3{
+	font-size: 25px;
+	color: #7c7c7c;
+	display: inline-block;
+}
+#content select{
+	float: right;
+	display:inline-block
+	height: 26px;
+	width: 220px;
+	padding-top: 10px;
+}
+
+#content label{
+	float:right; 
+	color: #7c7c7c;
+	padding-top: 10px;
+
+}
+#content table{
+	border-right: 1px solid #efefef;
+	margin-top: 15px;
+	text-align: center;
+	width: 100%;
+
+	color: #7c7c7c;
+}
+#content tbody tr:hover,#content tbody tr .selected{
+	background: #efefef;
+
+}
+#content tbody .selected{
+	background: #efefef;
+}
+#content tbody tr{
+	background-color: #fff;
+}
+#content td{
+	border-left: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+
+}
+#content .tr1{
+	background-color: #e5412d;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	height: 36px;
+
+}
+#content .tr1 th{
+		padding: 8px;
+}
+/*#content .tr2{
+	background-color: #fff;
+}*/
+#content .td1{
+	padding: 15px 0;
+	text-align: left;
+}
+#content .td1 .product1 {
+	font-size: 13px;
+	/*float: left;*/
+}
+#content .td1 .product1 a{
+	line-height: 20px;
+	color: #4d4d4d;
+	margin-left: 15px;
+
+}
+#content .td1 .product1 .span1{
+	color: #e5412d;
+	margin-left: 15px;
+}
+#content .td1 .product1 .span2{
+	margin-left: 15px;
+}
+#content .td2{
+	color: #7c7c7c;
+}
+
+#content table img{
+	float: left;
+	width: 88px;
+	height: 127px;
+}
+#content .input1{
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+}
+#content .spana{
+	margin: 15px 0;
+	overflow: hidden;
+}
+#content .spanb{
+	text-align: center;
+	padding: 15px;
+	width: 442px;
+	height: 107px;
+	background: #f4f4f4;
+	float: left;
+}
+#content .spanb strong{
+	font-size: 15px;
+	color: #7c7c7c;
+}
+#content .spanb input{
+	display: inline-block;
+	width: 410px;
+	height: 25px;
+	margin-top: 15px;
+}
+#content .spanb button{
+	font-size: 15PX;
+	line-height: 30px;
+	color: #fff;
+	margin-top: 15px;
+	background: #424242;
+	border: none;
+	padding: 5px;
+}
+#content .spanc{
+	padding: 15px;
+	width: 199px;
+	height: 69px;
+	float: right;
+}
+#content .spanc table{
+	font-weight: bold;
+	text-align: right;
+	font-size: 14px;
+	color: #7c7c7c;
+}
+#content .spand{
+	text-align: center;
+	padding: 15px;
+	width: 199px;
+	height: 69px;
+	float: right;
+}
+#content .spand .tot{
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	width: 199px;
+	color: #000;
+	background: #ccc;
+
+}
+#content .spand button{
+	display: inline-block;
+	width: 199px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	margin-top: 25px;
+	background: #e5412d;
+	color: #fff;
+	border: none;
+
+}

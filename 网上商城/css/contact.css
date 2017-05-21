@@ -1,0 +1,89 @@
+#content{
+	padding-top: 88px;
+	margin-bottom: 15px;
+}
+#content img{
+	margin-top: 15px;
+	width: 500px;
+	height: 300px;
+}
+#content h3{
+	font-size: 30px;
+	color: #7c7c7c;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+#content .span7{
+	width: 554px;
+	height: 192px;
+	float: left;
+	
+}
+#content .span7 input{
+	float: left;
+	width: 260px;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 15px;
+}
+#content .span7 input:nth-child(3){
+	width: 540px;
+	height: 110px;
+	margin-top: 15px;
+	
+}
+#content .span7 a {
+	display: inline-block;
+	 background: #e5412d;
+	font-size: 18px;
+	margin-top:15px;
+	width: 145px;
+	height: 32px;
+	line-height: 32px;
+	color: #fff;
+
+}
+#content .span7 span {
+	margin-left: 5px;
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.4);
+}
+#content .span5{
+	padding: 15px 15px;
+
+	color: #fff;
+	width: 370px;
+	height: 237px;
+	float: right;
+	background: #424242;
+}
+#content .span5 strong{
+	font-size: 15px;
+}
+#content .span5 span{
+	font-weight:80;
+	font-size: 13px;
+	line-height: 20px;
+}
+#content .span5 h3{
+	font-size:18px;
+	color: #fff;
+}
+#content #importent{
+	clear: both;
+	margin-top: 15px;
+}
+#content .importent span{
+	font-size: 16px;
+	margin-top: 55px;
+	color: #7c7c7c;
+}
+#content .importent p{
+	display: block;
+	margin-top: 15px;
+	font-size: 13px;
+	line-height: 20px;
+	color: #7c7c7c;
+	background: #f4f4f4;
+	padding: 10px;
+}

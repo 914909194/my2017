@@ -1,0 +1,280 @@
+#content {
+	padding-top: 88px;
+}
+#title {
+	font-size: 25px;
+	color: #7c7c7c;
+	line-height: 30px;
+	margin:15px 0;
+	font-weight: 400;
+}
+.carousel{
+	width: 960px;
+	position: relative;
+}
+.carousel-imgs{
+	width: 2880px;
+	position: absolute;
+	left:0;
+	position: absolute;
+	/*transition:left 2s ease;*/
+}
+.carousel-item{
+	float:left;
+	width: 960px;
+	/*background: #f00;
+*/
+}
+.carousel-btns{
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+/*.carousel-btns:nth-child(2):hover{
+	left:-960px;
+}
+.carousel-btns:nth-child(3):hover{
+	left:-1920px;
+}*/
+.carousel-txt{
+	float:left; 
+	width: 361px;
+	height: 194px;
+	padding: 15px;
+	text-align: center;
+	background: #f4f4f4;
+}
+.carousel-txt h3{
+	font-size: 26px;
+	color: #4d4d4d;
+	font-weight: 400;
+
+}
+.carousel-txt p{
+	color: #7c7c7c;
+	line-height: 20px;
+}
+.carousel-txt h5{
+	font-weight: bold;
+	color: #7c7c7c;
+	height: 48px;
+}
+.carousel-txt a{
+	display: block;
+	color: #fff;
+	background: #424242;
+	font-size: 17.5px;
+	height: 44px;
+	line-height: 44px;
+}
+.carousel-imgs img{
+	float: right;
+	width: 554px;
+	margin-left: 15px;
+}
+/*左侧栏开始*/
+#widget{
+	overflow: hidden;
+}
+.sidebar-box{
+	width: 230px;
+	
+	float: left;
+
+}
+.sidebar-box .list{
+	background: #f4f4f4;
+		 padding: 8px 0;
+}
+.sidebar-box .list li{
+	 height: 39px;
+
+    line-height: 39px;
+    text-align: left;
+    padding: 0px 10px;
+    border-bottom: 1px solid rgb(239, 239, 239);
+}
+.sidebar-box .list a{
+	color: #000;
+	font-size: 13px;
+	font-weight: bold;
+
+}
+.sidebar-box .list span{
+	line-height: 18px;
+	padding-left: 10px;
+	margin-top: 8px;
+	height: 20px;
+	width: 25px;
+	float: right;
+	color: #fff;
+	background: #7c7c7c;
+	border-radius: 8px;
+	font-weight: bold;
+}
+#question{
+	padding: 15px;
+	text-align: center;
+	width: 200px;
+	height: 224px;
+ 	background: rgb(66, 66, 66);
+}
+#question .glyphicon-question-sign{
+	margin:15px;
+	font-size: 70px;
+	color: #fff;
+}
+#question h2{
+	color: #fff;
+	font-size 17.5px;
+	margin: 0 0 5px;
+    font-weight: 400;
+}
+#question p{
+	padding: 0 15px;
+	color: #fff;
+	margin: 0 0 10px;
+    line-height: normal;
+	
+}
+#question a{
+    display: block;
+    color: #fff;
+    background: #e5412d;
+    font-size: 17.5px;
+    height: 30px;
+    line-height: 30px;
+}
+.sidebar-box .glyphicon-phone{
+	color: #7c7c7c;
+	font-size: 15px;
+	margin-top: 15px;
+}
+#labels{
+	background: #f4f4f4;
+	border:1px solid #efefef;
+	padding: 15px;
+	overflow: hidden;
+	text-align: center;
+}
+#labels span{
+	padding: 2px 4px;
+	background: #999;
+	color: #fff;
+	border-radius: 2px;
+	display: inline-block;
+	margin-top:2px;
+	/*float: left;*/
+}
+/*侧边栏结束*/
+/*瀑布流开始*/
+.waterfalls{
+	width: 716px;
+	/*height: 230px;*/
+/*	background: #ccc;*/
+	float: right;
+}
+.falls-item{
+	float: left;
+	width: 222px;
+	/*background: #f4f4f4;*/
+	margin-right:25px;
+}
+.falls-item:last-child{
+	margin-right:0;
+}
+.waterfalls li{
+	margin-bottom: 15px;
+	background: #f4f4f4;
+	position: relative;
+	overflow: hidden;
+}
+.p-price{
+	position: absolute;
+	right: -30px;
+    top: 13px;
+	color: #fff;
+	background: #609450;
+	width: 120px;
+	height: 34px;
+	line-height: 34px;
+	font-weight: bold;
+	text-align: center;
+	-webkit-transform:rotate(45deg);
+
+
+}
+.p-img img{
+	width: 100%;
+}
+.p-info{
+	padding: 15px;
+	overflow: hidden;
+}
+.p-info h3{
+	color: #7c7c7c;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.p-info p{
+	color: #7c7c7c;
+	line-height: normal;
+	margin-bottom: 5px;
+}
+.p-info .collect{
+	background: #424242;
+	color:#fff;
+	width: 39px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	float: left;
+	position: relative;
+}
+.p-info .collect:hover .col-tip{
+	display: block;
+}
+.col-tip{
+	background: #e86555;
+	color: #fff;
+	padding: 5px;
+	line-height: 20px;
+	position: absolute;
+	left:0;
+	top:-35px;
+	display: none;
+}
+.col-tip::after{
+	content: '';
+	border: 5px solid transparent;
+	border-top:5px solid #e86555;
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: -9px;
+	left:50%;
+	margin-left: -5px;
+
+}
+.p-info .add-cart{
+	background: #609450;
+	color:#fff;
+	font-size: 17px;
+	padding: 5px 12px;
+	float: left;
+
+}
+.p-info .view{
+	background: #e7e7e7;
+	color:#000;
+	width: 34px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	float: right;
+}

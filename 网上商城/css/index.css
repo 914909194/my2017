@@ -1,0 +1,235 @@
+/*banner开始*/
+#banner{
+/*	margin-top: 88px;*/
+	height: 356px;
+	background: #1f2123;
+	padding-top: 88px;
+}
+#banner .banner-contend{
+	width: 420px;
+	height: 280px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top:-140px;
+	text-align: right;
+}
+#banner .banner-contend h1{
+	color: #fff;
+	height: 46px;
+	line-height: 46px;
+	font-size: 46px;
+}
+#banner .banner-contend p{
+	color: #fff;
+	line-height: 25px;
+	text-align: right;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: "微软雅黑"
+}
+#banner .banner-contend a{
+	display: inline-block;
+	color: #fff;
+	padding:10px;
+	margin-right: 50px;
+}
+#banner .banner-contend .check-out{
+	background: #e5412d;
+}
+#banner .banner-contend  .buy-now{
+	background: #e7e7e7;
+	color: #333333;
+	margin-right: 0;
+}
+/*banner结束*/
+
+/*awesome开始*/
+#awesome{
+	height: 100px;
+	background: #f4f4f4;
+	border-bottom: 1px solid #efefef;
+	text-align: center;
+	line-height: 100px;
+}
+#awesome .text-primary{
+	font-size: 26px;
+	color: #e5412d;
+	font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+#awesome .features{
+	font-size: 26px;
+	color: #4d4d4d;
+}
+#awesome .love{
+	font-style:italic;
+	color: #ccc;
+}
+/*awesome结束*/
+/*content开始*/
+#slogan{
+	border: 1px solid #efefef;
+	color: #7c7c7c;
+	background:#f4f4f4;
+	margin: 15px auto;
+	padding: 15px;
+}
+#features{
+	overflow: hidden;
+}
+#features li{
+	width: 197px;
+	height: 225px;
+	padding: 15px;
+	margin-right: 15px;
+	border:1px solid #efefef;
+	float: left;
+	text-align: center;
+}
+#features li:last-child{
+	margin-right: 0;
+	width: 196px;
+
+}
+#features .glyphicon{
+	font-size: 70px;
+	color: #e2e2e2;
+}
+#features h3{
+	font-family: 'Roboto Slab', sans-serif;
+	font-size: 17.5px;
+    margin: 10px 0 10px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+#features p{
+	color: #7c7c7c;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+#features a{
+	color: #e5412d;
+}
+#follow-us{
+	height: 137px;
+	border: 1px solid #efefef;
+	padding: 15px;
+	background: #f4f4f4;
+	text-align: center;
+	margin-top: 15px;
+}
+
+#follow-us h3{
+	font-size: 21px;
+    font-weight: 200;
+    line-height: 30px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+#follow-list li{
+	display: inline-block;
+	margin-right: 30px;
+	
+}
+#follow-list .glyphicon{
+	font-size: 50px;
+	color: #444444;
+}
+#follow-list a{
+	font-size: 14px;
+	/*color: #e5412d;*/
+	font-weight: 400;
+	line-height: 20px;
+	color: #444444;
+}
+#follow-list .selected span{
+	color: #e5412d;
+}
+#follow-list .selected a{
+	color: #e5412d;
+}
+#testimonials{
+	font-size: 24px;
+	color: #7c7c7c;
+	margin:15px 0;
+	overflow: hidden;
+}
+#testimonials span{
+	float: left;
+}
+#testimonials h3{
+	display: inline-block;
+}
+#chat-list{
+	overflow: hidden;
+	color: #7c7c7c;
+}
+#chat-list .chat-item{
+	border: 1px solid #efefef;
+	padding: 15px;
+	width: 440px;
+	height: 73px;
+	margin-bottom: 15px;
+}
+#chat-list .chat-item:nth-child(2n+1){
+	float: left;
+}
+#chat-list .chat-item:nth-child(2n){
+	float: right;
+}
+#chat-list .glyphicon{
+	font-size: 32px;
+	float: left;
+}
+#chat-list p{
+	margin-left: 70px;
+	line-height: 15px;
+}
+#chat-list a{
+	color:#e5412d;
+}
+#give{
+	clear: both;
+	height: 75px;
+	border: 1px solid #efefef;
+}
+#give h2{
+	width: 614px;
+	height: 30px;
+	font-size: 26px;
+	line-height: 30px
+	font-weight:400;
+	color: #4d4d4d;
+	margin-left: 15px;
+	text-align: center;
+}
+#give p{
+	font-size: 13px;
+    color: #7c7c7c;
+	width: 614px;
+	height: 15px;
+	margin-left: 15px;
+	margin-top: 15px;
+	text-align: center;
+}
+#give span{
+	font-size: 20px;
+	line-height: 40px;
+}
+
+#give a{
+	position: absolute;
+	top: 15px;
+	right: 0;
+	display: block;
+	height: 42px;
+	width: 300px;
+	background:#e5412d;
+	color: white;
+	font-size: 13px;
+	margin-right: 0;
+}
+
+/*contend结束*/

@@ -1,0 +1,169 @@
+#content{
+	padding-top: 88px;
+	margin-bottom: 15px;
+}
+#content .tytle{
+	padding: 15px 0;
+	color: #7c7c7c;
+	height: 30px;
+	line-height: 30px;
+}
+#content .tytle .glyphicon{
+	font-size: 27px;
+}
+#content .tytle .companny{
+	font-size: 50%;
+	color: #afafaf;
+	font-style: italic;
+	vertical-align: middle;
+}
+#slogan{
+	background: #f4f4f4;
+	height: 30px;
+	line-height: 30px;
+	padding: 15px;
+	border: 1px solid #efefef;
+	text-align: center;
+	font-size: 21px;
+    color: #7c7c7c;
+    margin-bottom: 15px;
+}
+#user-list{
+	overflow: hidden;
+}
+#user-list > li{
+	width: 300px;
+	height: 363px;
+	padding: 4px;
+    border: 1px solid #ddd;
+    float: left;
+    margin-right: 15px;
+}
+#user-list > li > img{
+	width: 300px;
+	height: 200px;
+}
+#user-list h3{
+	font-family: 'Roboto Slab', sans-serif;
+    margin: 0 0 5px;
+    font-weight: 400;
+    color: #4d4d4d;
+    font-size: 17.5px;
+    padding: 10px;
+}
+#user-list p{
+	font-family: 'Roboto Slab', sans-serif;
+    color: #7c7c7c;
+    font-size: 13px;
+    padding: 0 10px 10px;
+}
+#user-list .social{
+	overflow: hidden;
+	padding: 0 10px 10px;
+}
+#user-list .social li{
+	display: inline-block;
+	margin-right: 5px;
+}
+#user-list .social .glyphicon{
+	font-size: 24px;
+	color: #797979;
+}
+#user-list .social .selected .glyphicon{
+	color: #e5412d;
+}
+
+.separator{
+	clear: both;
+	height: 2px;
+	background: #f4f4f4;
+	margin: 20px 0;
+	position: relative;	
+	text-align: center;
+}
+.separator .glyphicon{
+	color: #797979;
+	font-size: 40px;
+	position: absolute;
+	top: 50%;
+	margin-top: -18px;
+	padding: 0 10px;
+	background: #fff;
+}
+#content .learn{
+	border: 1px solid #efefef;
+	height: 292px;
+	width: 470px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	float: left;
+	margin-right: 15px;
+	overflow: hidden;
+}
+#content .learn div{
+	clear: both;
+}
+#content .learn span{
+	font-size: 50px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 15px;
+	color: #7c7c7c;
+}
+#content .learn p,#content .learn  h3{
+	margin-top: 15px;
+	margin-left: 15px;
+	width: 350px;
+	float: left;
+	color: #7c7c7c;
+}
+#content .learn a{
+	float: left;
+	margin-left: 79px;
+	margin-top: 10px;
+	color: #e5412d;
+}
+#content .new{
+	/*position: absolute;
+	left: 487px;
+	top: 0;*/
+	border: 1px solid #efefef;
+	float: left;
+	width: 462px;
+	height: 97px;
+	margin-left: 15px;
+}
+#content .new h5{
+	margin-left: 15px;
+	margin-top: 15px;
+	color: 	#7c7c7c;
+	font-size: 15px;
+}
+#content .new>.glyphicon{
+	margin-left: 15px;
+	color: #e2e2e2;
+    font-size: 35px;
+}
+#content .new .glyphicon1{
+	color: #7c7c7c;
+	font-size: 13px;
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+
+#content h4{
+	text-align: left;
+	margin-top: 18px;
+	color: #7c7c7c;
+	float: left;
+}
+#content .twitter{
+	padding-top: 10px;
+	line-height: 18px;
+	border: 1px solid #efefef;
+	margin-top: 10px;
+	width: 462px;
+	height: 97px;
+	float: left;
+	color: #7c7c7c;
+}

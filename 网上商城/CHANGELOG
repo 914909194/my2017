@@ -1,0 +1,18 @@
+Version 1.2.0 - 22/07/2013
+- Fixed: IE8 issues
+- Fixed: IE9 issues
+- Fixed: IE10 issues
+- Fixed: Styling issues in Login & Signup pages - Front module - when using AJAX
+- Fixed: Typo issue in Login pages - Admin module
+- Fixed: Google Maps & Vector Maps
+- Updated: jQuery Sparkline to v2.1.2
+- Added: New configurable sidebar menu options - mini/wide/auto-toggle (mini by default, wide by default, enable/disable auto-toggle on hover)
+
+Version 1.1.0 - 18/07/2013
+- Added: New Sticky Bottom Main Menu
+- Added: Mega menu (responsive 12 column grid system & support for any HTML content)
+- Added: Configurable option for horizontal menu position (Top or Bottom) - PHP only
+- Fixed: Responsive CSS media queries breaking the Front module
+
+Version 1.0.0 - 17/07/2013
+- Initial Release
