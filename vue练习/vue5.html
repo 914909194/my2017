@@ -3,13 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		.red{
+			color: red;
+		}
+	</style>
 </head>
 <body>
 <div id="app">
 	<input type="text" v-model='msg' @keyup='filter'>
 	<button @click='add'>add</button>
 	<ul>
-		<li v-for='item in itemshow'>{{item}}</li>
+		<li v-for='item in itemshow' :class={red:item.active} @click='item.active=!item.active'>{{item.val}}</li>
 	</ul>
 </div>
 	<script src='js/vue.js'></script>
@@ -20,15 +25,16 @@
 				msg:'',
 				items:[],
 				itemshow:[]
+				
 			},
 			methods:{
 				add:function(){
 					
 					if(this.msg!=''){
-						this.items.push(this.msg);
+						this.items.push({val:this.msg,active:false});
 						this.msg='';
 						this.items.sort(function(a,b){
-							return a>b;
+							return a.val>b.val;
 						});
 						this.itemshow=this.items;
 					}
@@ -36,8 +42,9 @@
 				filter:function(){
 
 					var _msg=this.msg;
-					var arr=this.items.filter(function(val){
-						return val.indexOf(_msg)>-1;
+					//这里用_msg存储this.msg是因为下面的函数如果用this就不是这个对象了而是Window 这种情况经常遇到 所以这个方法经常用到。而且下面这个函数也经常用到需要记住
+					var arr=this.items.filter(function(obj){
+						return obj.val.indexOf(_msg)>-1;
 					})
 					this.itemshow=arr;
 				}

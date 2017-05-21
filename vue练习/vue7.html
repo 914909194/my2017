@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		是否需要额外付费设置：
+		<input type="checkbox" @click='showTime'>
+		<ul>
+			<li v-for='a in arr'>
+				{{a.name}}-{{a.price}}
+				<input type="checkbox" v-model='facility' :value='a'>
+			</li>
+		</ul>
+		订单付费信息:
+		<ul>
+			<li v-for='obj in facility'>
+				{{obj.name}} {{obj.price}}
+			</li>
+		</ul>
+		总金额：{{total}}
+	</div>
+	<script src='js/vue.js'></script>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				arr:[],
+				// facility:[{name:'群力花园豪华型'，price:400}]
+				facility:[{name:'群力花园豪华型',price:400}]
+			},
+			computed:{
+				total:function(){
+					var num=0;
+					this.facility.forEach(function(val){
+						num+=parseInt(val.price);
+					})
+					return num;
+				}
+			},
+			methods:{
+				showTime:function(){
+
+					if(event.target.checked){
+						// this.arr=[{name:'沙发'，price:'100'},{name:'篮球'，price:'150'},{name:'足球'，price:'200'}]
+						this.arr=[{name:'沙发',price:180},{name:'篮球',price:150},{name:'足球',price:200}]
+					}else{
+						this.arr.splice(0);
+						this.facility.splice(1);
+					}
+				}
+			}
+
+
+
+
+		})
+	</script>
+</body>
+</html>

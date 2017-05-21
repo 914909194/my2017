@@ -10,13 +10,14 @@
 </div>
 	<script src='js/vue.js'></script>
 	<script>
-		var vn=new Vue({
+		var vm=new Vue({
 			el:'#app',
 			data:{
 				firstName:'zhang',
 				lastName:'san'
 			},
 			computed:{
+				//计算属性 他与methods区别是计算属性有缓存 而methods每次都会执行一次
 				// fullName:function(){
 				// 	return this.firstName+' '+this.lastName;
 				// }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+	姓名：<input type="text" v-model='msg1'>
+	班级：<input type="text" v-model='msg2'>
+	<button @click='add'>add</button>
+	<ul>
+		<li v-for='(item,index) in itemshow'>
+			<span>{{item.name}}-{{item.age}}</span>
+			<button @click='del(index)'>del</button>
+		</li>
+	</ul>
+	<!-- <ul>
+		<li v-for='(item,index) in itemshow' >
+			<span  :class={red:item.active }  @click='item.active=!item.active'>   {{item.name}}-{{item.age}}
+			</span>
+			 <button @click='del(index)'>del</button> 
+		</li>\//template
+	</ul> -->
+</div>
+	<script src='vue.js'></script>
+	<script>
+		new Vue({
+
+			el:'#app',
+			data:{
+				msg1:'',
+				msg2:'',
+				items:[],
+				itemshow:[]
+			},
+			methods:{
+				add:function(){
+					if(this.msg1!=''&&this.msg2!=''){
+						// console.log(11);
+						this.items.push({name:this.msg1,age:this.msg2,active:false});
+						this.msg1='';
+						this.msg2='';
+						this.items.sort(function(a,b){
+							return a.name>b.name;
+						});
+						this.itemshow=this.items;
+					}
+				},
+				del:function(index){
+					this.items.splice(index,1)
+				}
+			}
+		})
+		
+	</script>
+</body>
+</html>
