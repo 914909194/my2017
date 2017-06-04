@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转木马</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		img{
+			width: 200px;
+			height: 200px;
+		}
+		body{
+			background: rgba(0,0,0,1);
+
+			/*-webkit-perspective:800px;*/
+		}
+		#div0{
+			width: 200px;
+			height: 200px;
+			margin:100px auto;
+			-webkit-transform-style:preserve-3d;
+			position: relative;
+			-webkit-transform:rotateX(-15deg);
+			transition: transform 1s ease;
+			-webkit-animation:run 5s linear 0s infinite;
+			/*-webkit-perspective-origin:top;
+			perspective-origin:top;*/
+			/*-webkit-transform:rotateX(-15deg);*/
+		}
+		
+		@-webkit-keyframes run{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+			}
+			100%{
+				-webkit-transform: rotateX(-15deg) rotateY(360deg)   ;
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div0 div{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left:0;
+			top:0;
+			/*-webkit-transform-origin: left center;*/
+			/*-webkit-transform:rotateX(-15deg);*/
+		}
+		#div1{
+			
+			-webkit-animation:run1 1s linear 0s forwards;
+		}
+		@-webkit-keyframes run1{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(40deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div2{
+			/*-webkit-transform:rotateY(80deg) translateZ(300px);*/
+			-webkit-animation:run2 1s linear 0s forwards;
+		}
+		@-webkit-keyframes run2{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(80deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div3{
+			/*-webkit-transform:rotateY(120deg) translateZ(300px);*/
+			-webkit-animation:run3 1s linear 0s forwards;
+		}
+		@-webkit-keyframes run3{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(120deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div4{
+			/*-webkit-transform:rotateY(160deg) translateZ(300px);*/
+			-webkit-animation:run4 1s linear 0s forwards;
+		}
+		@-webkit-keyframes run4{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(160deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div5{
+			/*-webkit-transform:rotateY(200deg) translateZ(300px);*/
+			-webkit-animation:run5 1s linear 0s forwards;
+
+		}
+		@-webkit-keyframes run5{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(200deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div6{
+			/*-webkit-transform:rotateY(240deg) translateZ(300px);*/
+			-webkit-animation:run6 1s linear 0s forwards;
+
+		}
+		@-webkit-keyframes run6{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(240deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div7{
+			/*-webkit-transform:rotateY(280deg) translateZ(300px);*/
+			-webkit-animation:run7 1s linear 0s forwards;
+
+		}
+		@-webkit-keyframes run7{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(280deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div8{
+			/*-webkit-transform:rotateY(320deg) translateZ(300px);*/
+			-webkit-animation:run8 1s linear 0s forwards;
+
+		}
+		@-webkit-keyframes run8{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(320deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+		#div9{
+			/*-webkit-transform:rotateY(360deg) translateZ(300px);*/
+			-webkit-animation:run9 1s linear 0s forwards;
+
+		}
+			@-webkit-keyframes run9{
+			0%{
+
+				/*-webkit-transform:rotateY(0deg)  rotateX(-15deg) ;*/
+				-webkit-transform:rotateX(-15deg) rotateY(0deg) ;
+
+			}
+			100%{
+				/*-webkit-transform: rotateX(-15deg) rotateY(40deg)   ;*/
+				-webkit-transform: rotateY(360deg) rotateX(-15deg) translateZ(300px);
+				/*-webkit-transform: rotateY(360deg) rotateX(-15deg)  ;*/
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="div0">
+		<div id="div1">
+			<img src="img/1.jpg" alt="">
+		</div>
+		<div id="div2">
+			<img src="img/2.jpg" alt="">
+			
+		</div>
+		<div id="div3">
+			<img src="img/3.jpg" alt="">
+			
+		</div>
+		<div id="div4">
+			<img src="img/4.jpg" alt="">
+			
+		</div>
+		<div id="div5">
+			<img src="img/5.jpg" alt="">
+		</div>
+		<div id="div6">
+			<img src="img/6.jpg" alt="">
+		</div>
+		<div id="div7">
+			<img src="img/7.jpg" alt="">
+		</div>
+		<div id="div8">
+			<img src="img/8.jpg" alt="">
+		</div>
+		<div id="div9">
+			<img src="img/9.jpg" alt="">
+		</div>
+
+	</div>
+
+	<script>
+		var oDiv=document.getElementById('div0');
+		var aImg=oDiv.getElementsByTagName('img');
+		var num=0;
+		// console.log(aImg.length);
+		for(var i=0;i<aImg.length;i++){
+
+			aImg[i].onclick=function(){
+				num++;
+				oDiv.style.transform='rotateX(-15deg) rotateY('+40*num+'deg)';
+			}
+		}
+		// oDiv.onmouseover=function(){
+		// 	// -webkit-animation:run 5s linear 0s infinite;
+		// 	oDiv.style.animation='';
+		// }
+		// oDiv.onmouseout=function(){
+		// 	// -webkit-animation:run 5s linear 0s infinite;
+		// 	oDiv.style.animation='run 5s linear 0s infinite;';
+		// }
+		
+	</script>
+</body>
+</html>

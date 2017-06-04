@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #stage{
+            width: 100%;
+            height: 800px;
+            background: #cccccc;
+            margin:0 auto;
+            background: rgba(0,0,0,1);
+           /* box-shadow:0 0 3px 3px rgba(0,0,0,0.7);*/
+            overflow: hidden;
+            /*border:1px solid #000;*/
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin: center -15%;
+        }
+        #container{
+            width: 200px;
+            height: 200px;
+            /*background: #ff0000;*/
+            margin:100px auto;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            transition: transform 1s ease;
+        }
+        #container img{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left:0;
+            top:0;
+           /* -webkit-transition:transform 1s ease ;*/
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div id="container">
+
+        </div>
+    </div>
+
+    <script>
+
+        var oContainer = document.getElementById('container');
+        var oStage = document.getElementById('stage');
+
+        var x = 100/Math.tan(20*(Math.PI/180)) +20;
+        var html='';
+        var idx = 0;
+        var count=0;
+        for(var i=0;i<9;i++){
+           var oImg=new Image();
+           oImg.onload = function(){
+                count++;
+                if(count==9){
+                    var aImg = oContainer.getElementsByTagName('img');
+
+                    for( var i=0;i<9;i++){
+                        aImg[i].style.WebkitTransition='transform 3s ease '+(9-i)+'ms';
+                        aImg[i].style.WebkitTransform='rotateY('+(-i*40)+'deg) translateZ('+x+'px)'; 
+                    }
+
+                }
+           }
+            oImg.src='img/'+(i+1)+'.jpg';
+
+            oContainer.appendChild(oImg);
+        }
+
+
+        oStage.onmousedown = function(e){
+            var oEvent=e||event;
+            var t=oEvent.clientX;
+            oStage.onmousemove=function(e){
+            var oEvent=e||event;
+            var l=oEvent.clientX;
+            
+            var num=l-t;
+            idx+=num;
+            console.log(num);
+            oContainer.style.transform = "rotateY("+num/3+"deg)";
+            }
+            // var num=(Math.random()-0.5)*2;
+            // console.log(num);        
+        }
+        oStage.onmouseup = function(ev){
+            // var oEvent=e||event;
+            // var l=oEvent.clientX;
+            // var t=oEvent.clientY;
+            // var num=l-t;
+            // oContainer.style.transform = "rotateY("+num/4+"deg)";
+
+            oStage.onmousemove=function(e){    
+                // oContainer.style.transform = "";
+            }
+            
+        }
+        
+
+
+    </script>
+
+</body>
+</html>
