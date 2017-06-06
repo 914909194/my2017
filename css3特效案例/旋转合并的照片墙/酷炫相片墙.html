@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>酷炫相片墙</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			width: 100%;
+			height: 100%;
+			background: url(img/bg.jpg);
+		}
+		#container{
+			width: 100%;
+    		height: 100%;
+    		
+    		position: relative;
+		}
+		#container .img{
+			width: 125px;
+			height: 125px;
+			border: 5px solid #fff;
+    		position: absolute;
+    		left: -150px;
+    		top: -150px;
+    		-webkit-transition: all 500ms ease;
+		}
+		#container div:hover{
+			-webkit-transform:scale(1.5);
+			z-index: 998;
+		}
+		#next{
+			position: absolute;
+			right:10px;
+			top:50%;
+			width: 30px;
+			height: 30px;
+			display: none;
+		}
+		#prev{
+			position: absolute;
+			left:10px;
+			top:50%;
+			width: 30px;
+			height: 30px;
+			display: none;
+
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">出现</button>
+	<button id="btn2">收起</button>
+
+	<div id="container">
+		
+	</div>
+	<img id="next" src="img/next.png" alt="">
+	<img id="prev" src="img/prev.png" alt="">
+	<script>
+		var oCotainer=document.getElementById('container');
+		var obtn1=document.getElementById('btn1');
+		var obtn2=document.getElementById('btn2');
+		var onext=document.getElementById('next');
+		var oprev=document.getElementById('prev');
+		var html='';
+		for(var i=0;i<24;i++){
+			html+="<div class='img'></div>";
+
+		}
+		oCotainer.innerHTML=html;
+		var aImg=oCotainer.getElementsByTagName('div');
+		var idx1=0;
+		var idx2=0;
+		var count=0;
+		var now=0;
+		obtn1.onclick=function(e){
+			var oEvent=e||event;
+			
+			// oEvent.cancelBubble=true;//IE浏览器取消冒泡
+			// oEvent.preventDefault();
+			oEvent.stopPropagation();//谷歌浏览器取消冒泡
+			for(var i=0;i<24;i++){
+				aImg[i].index=i;
+				var num=(Math.random()-0.5)*40;
+				aImg[i].style.transform='rotate('+num+'deg)';
+				aImg[i].style.background='url(img/thumbs/'+(i+1)+'.jpg)';
+				idx1=i%6;			
+				if(i%6==0){
+					idx2++;
+					if(idx2==5){
+						idx2=1;
+					}
+				}
+				aImg[i].style.left=''+(79*(idx1+1)+135*idx1)+'px';
+				aImg[i].style.top=''+(24*idx2+135*(idx2-1))+'px';	
+				aImg[i].style.transitionDelay=''+(23-i)*50+'ms';
+				aImg[i].style.border='5px solid #fff';						
+			}
+		}
+
+
+		obtn2.onclick=function(e){
+			var oEvent=e||event;
+			// oEvent.preventDefault();
+			
+			// oEvent.cancelBubble=true;//IE浏览器取消冒泡
+			oEvent.stopPropagation();//谷歌浏览器取消冒泡
+			for(var i=0;i<24;i++){
+				aImg[i].style.left='-150px';
+				aImg[i].style.top='-150px';
+				aImg[i].style.transitionDelay=''+(23-i)*50+'ms';
+			}
+			
+			// return false; //取消事件冒泡
+
+		}
+		document.onclick=function(){		
+				for(var i=0;i<24;i++){
+				var num=(Math.random()-0.5)*40;
+				aImg[i].style.transform='rotate('+num+'deg)';
+				aImg[i].style.transitionDelay='0s';
+				}	
+		}
+
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].onclick=function(e){
+				now=this.index;
+				var oEvent=e||event;
+				oEvent.cancelBubble=true;//IE浏览器取消冒泡
+				var _this=this.index;
+				
+				
+				count++;
+				if(count%2==1){
+					onext.style.display='block';
+					oprev.style.display='block'
+					for(var j=0;j<aImg.length;j++){
+						aImg[j].style.transform='rotate(0deg)';
+						idx1=j%6;			
+						if(j%6==0){
+							idx2++;
+							if(idx2==5){
+								idx2=1;
+							}
+						}
+					
+						aImg[j].style.background='url(img/'+(_this+1)+'.jpg)';
+						aImg[j].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+					
+						aImg[j].style.left=''+(290+127*idx1)+'px';
+						aImg[j].style.top=''+(30+127*(idx2-1))+'px';
+						aImg[j].style.transitionDelay='0s';
+						aImg[j].style.border='1px solid #fff';
+					}
+				}else{
+					onext.style.display='none';
+					oprev.style.display='none'
+					for(var i=0;i<24;i++){
+						var num=(Math.random()-0.5)*40;
+						aImg[i].style.transform='rotate('+num+'deg)';
+						aImg[i].style.background='url(img/thumbs/'+(i+1)+'.jpg)';
+						idx1=i%6;			
+						if(i%6==0){
+							idx2++;
+							if(idx2==5){
+								idx2=1;
+							}
+						}
+						aImg[i].style.left=''+(79*(idx1+1)+135*idx1)+'px';
+						aImg[i].style.top=''+(24*idx2+135*(idx2-1))+'px';	
+						aImg[i].style.transitionDelay=''+(23-i)*50+'ms';
+						aImg[i].style.border='5px solid #fff';	
+						aImg[i].style.transitionDelay='0s';					
+					}
+				}
+				
+			}
+		}
+
+		onext.onclick=function(e){
+			now++;
+			if(now==24){
+				now=0;
+			}
+			var oEvent=e||event;
+			oEvent.stopPropagation();//谷歌浏览器取消冒泡
+			for(var i=0;i<aImg.length;i++){
+				idx1=i%6;			
+					if(i%6==0){
+						idx2++;
+						if(idx2==5){
+							idx2=1;
+						}
+					}
+					
+					aImg[i].style.background='url(img/'+(now+1)+'.jpg)';
+					aImg[i].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+			}
+		}
+		oprev.onclick=function(e){
+			now--;
+			if(now==-1){
+				now=23;
+			}
+			var oEvent=e||event;
+			oEvent.stopPropagation();//谷歌浏览器取消冒泡
+			for(var i=0;i<aImg.length;i++){
+				idx1=i%6;			
+					if(i%6==0){
+						idx2++;
+						if(idx2==5){
+							idx2=1;
+						}
+					}
+					
+					aImg[i].style.background='url(img/'+(now+1)+'.jpg)';
+					aImg[i].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+			}
+		}
+
+
+
+		
+		
+	</script>
+</body>
+</html>
