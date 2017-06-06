@@ -28,11 +28,11 @@
     		top: -150px;
     		-webkit-transition: all 500ms ease;
 		}
-		#container div:hover{
-			-webkit-transform:scale(1.5);
-			z-index: 998;
-		}
 		#next{
+			background: skyblue;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
 			position: absolute;
 			right:10px;
 			top:50%;
@@ -40,7 +40,16 @@
 			height: 30px;
 			display: none;
 		}
+		#next img{
+			position: absolute;
+			left: 7px;
+			top:7px;
+		}
 		#prev{
+			background: skyblue;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
 			position: absolute;
 			left:10px;
 			top:50%;
@@ -48,6 +57,11 @@
 			height: 30px;
 			display: none;
 
+		}
+		#prev img{
+			position: absolute;
+			left: 7px;
+			top:7px;
 		}
 	</style>
 </head>
@@ -58,8 +72,13 @@
 	<div id="container">
 		
 	</div>
-	<img id="next" src="img/next.png" alt="">
-	<img id="prev" src="img/prev.png" alt="">
+	<div id="next">
+		<img  src="img/next.png" alt="">
+	</div>
+	<div id="prev">
+		<img src="img/prev.png" alt="">
+	</div>
+	
 	<script>
 		var oCotainer=document.getElementById('container');
 		var obtn1=document.getElementById('btn1');
@@ -77,6 +96,8 @@
 		var idx2=0;
 		var count=0;
 		var now=0;
+		
+	
 		obtn1.onclick=function(e){
 			var oEvent=e||event;
 			
@@ -182,23 +203,33 @@
 		}
 
 		onext.onclick=function(e){
+			var arr=[];
+			for(var i=0;i<24;i++){
+				arr.push(i);
+			}
+			arr.sort(function(a,b){
+				return Math.random()-0.5
+			})
 			now++;
 			if(now==24){
 				now=0;
 			}
 			var oEvent=e||event;
-			oEvent.stopPropagation();//谷歌浏览器取消冒泡
+			oEvent.stopPropagation();//谷歌浏览器取消冒泡	
 			for(var i=0;i<aImg.length;i++){
+				
 				idx1=i%6;			
-					if(i%6==0){
-						idx2++;
-						if(idx2==5){
-							idx2=1;
-						}
+				if(i%6==0){
+					idx2++;
+					if(idx2==5){
+						idx2=1;
 					}
-					
-					aImg[i].style.background='url(img/'+(now+1)+'.jpg)';
-					aImg[i].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+				}
+				 
+				var idx3=arr[i];
+				aImg[i].style.background='url(img/'+(now+1)+'.jpg)';
+				aImg[i].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+				aImg[idx3].style.transitionDelay=''+i*20+'ms';
 			}
 		}
 		oprev.onclick=function(e){
@@ -208,6 +239,15 @@
 			}
 			var oEvent=e||event;
 			oEvent.stopPropagation();//谷歌浏览器取消冒泡
+			var arr=[];
+			for(var i=0;i<24;i++){
+				arr.push(i);
+			}
+		
+			arr.sort(function(a,b){
+				return Math.random()-0.5
+			})
+
 			for(var i=0;i<aImg.length;i++){
 				idx1=i%6;			
 					if(i%6==0){
@@ -216,9 +256,10 @@
 							idx2=1;
 						}
 					}
-					
+					var idx3=arr[i];
 					aImg[i].style.background='url(img/'+(now+1)+'.jpg)';
 					aImg[i].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+					aImg[idx3].style.transitionDelay=''+i*20+'ms';
 			}
 		}
 
