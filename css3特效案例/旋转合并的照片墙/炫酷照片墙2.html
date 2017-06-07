@@ -59,6 +59,13 @@
 			display: none;
 
 		}
+		#btn2{
+			background: skyblue;
+			height: 30px;
+			height: 30px;
+			border:1px solid #fff;
+			border-radius:50%;
+		}
 		#prev img{
 			position: absolute;
 			left: 7px;
@@ -78,7 +85,7 @@
 	</style>
 </head>
 <body>
-	<button id="btn1">出现</button>
+	<!-- <button id="btn1">出现</button> -->
 	<button id="btn2">收起</button>
 
 	<div id="container">
@@ -109,14 +116,7 @@
 		var count=0;
 		var now=0;
 		
-		
-	
-		obtn1.onclick=function(e){
-			var oEvent=e||event;
-			
-			// oEvent.cancelBubble=true;//IE浏览器取消冒泡
-			// oEvent.preventDefault();
-			oEvent.stopPropagation();//谷歌浏览器取消冒泡
+		setTimeout(function(){
 			for(var i=0;i<24;i++){
 				aImg[i].index=i;
 				var num=(Math.random()-0.5)*40;
@@ -132,9 +132,36 @@
 				aImg[i].style.left=''+(79*(idx1+1)+135*idx1)+'px';
 				aImg[i].style.top=''+(24*idx2+135*(idx2-1))+'px';	
 				aImg[i].style.transitionDelay=''+(23-i)*50+'ms';
-				aImg[i].style.border='5px solid #fff';						
+				aImg[i].style.border='5px solid #fff';	
 			}
-		}
+		},10);
+
+
+		// obtn1.onclick=function(e){
+		// 	var oEvent=e||event;
+			
+		// 	// oEvent.cancelBubble=true;//IE浏览器取消冒泡
+		// 	// oEvent.preventDefault();
+		// 	oEvent.stopPropagation();//谷歌浏览器取消冒泡
+		// 	for(var i=0;i<24;i++){
+		// 		aImg[i].index=i;
+		// 		var num=(Math.random()-0.5)*40;
+		// 		aImg[i].style.transform='rotate('+num+'deg)';
+		// 		aImg[i].style.background='url(img/thumbs/'+(i+1)+'.jpg)';
+		// 		idx1=i%6;			
+		// 		if(i%6==0){
+		// 			idx2++;
+		// 			if(idx2==5){
+		// 				idx2=1;
+		// 			}
+		// 		}
+		// 		aImg[i].style.left=''+(79*(idx1+1)+135*idx1)+'px';
+		// 		aImg[i].style.top=''+(24*idx2+135*(idx2-1))+'px';	
+		// 		aImg[i].style.transitionDelay=''+(23-i)*50+'ms';
+		// 		aImg[i].style.border='5px solid #fff';						
+		// 	}
+		// }
+
 
 
 		obtn2.onclick=function(e){
@@ -188,7 +215,7 @@
 						aImg[j].style.left=''+(290+127*idx1)+'px';
 						aImg[j].style.top=''+(30+127*(idx2-1))+'px';
 						aImg[j].style.transitionDelay='0s';
-						aImg[j].style.border='1px solid #fff';
+						aImg[j].style.border='0px solid #fff';
 					}
 				}else{
 					onext.style.display='none';
@@ -242,8 +269,8 @@
 				var idx3=arr[i];
 				aImg[idx3].style.left=''+(290+127*idx1)+'px';
 				aImg[idx3].style.top=''+(30+127*(idx2-1))+'px';
-				aImg[idx3].style.background='url(img/'+(now+1)+'.jpg)';
-				aImg[idx3].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+				aImg[idx3].style.background='url(img/'+(now+1)+'.jpg) left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px';
+				// aImg[idx3].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
 				// aImg[idx3].style.transitionDelay=''+i*20+'ms';
 				
 			}
@@ -275,8 +302,8 @@
 					var idx3=arr[i];
 					aImg[idx3].style.left=''+(290+127*idx1)+'px';
 					aImg[idx3].style.top=''+(30+127*(idx2-1))+'px';
-					aImg[idx3].style.background='url(img/'+(now+1)+'.jpg)';
-					aImg[idx3].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
+					aImg[idx3].style.background='url(img/'+(now+1)+'.jpg) left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px';
+					// aImg[idx3].style.backgroundPosition='left '+(-125*idx1)+'px top '+(-125*(idx2-1))+'px ';
 					// aImg[idx3].style.transitionDelay=''+i*20+'ms';
 			}
 		}
