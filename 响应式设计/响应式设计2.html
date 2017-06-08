@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>响应式设计案例</title>
+	
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		h3{
+			width: 960px;
+			height: 100px;
+			background: #ccc;
+			margin:100px auto;
+			text-align: center;
+			line-height: 100px;
+		}
+		#banner{
+			width: 960px;
+			margin:0 auto;
+			height: 540px;
+			background: url(img/01.jpg) no-repeat;
+			background-size:cover;
+
+		}
+		#banner img{
+			width: 960px;
+		}
+		#content{
+			width: 960px;
+			margin:0 auto;
+			
+		}
+		#left,#right{
+			height: 300px;
+			display: table;
+		}
+		/*多行文字垂直居中 给父元素设置display:table   然后给子元素设置display：table-cell 和vertical-align:middle*/
+		#left p,#right p{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+		#left{
+			width: 630px;
+			background: pink;
+			float:left;
+		}
+		#right{
+			width: 300px;
+			background: skyblue;
+			float:right;
+		}
+		#footer{
+			clear:both;
+			
+		}
+		@media screen and (max-width: 960px){
+            h3{
+                width: 100%;
+            }
+            #content{
+                width: 100%;
+                /*display: -webkit-box;*/
+            }
+            #left{
+            	/*width:auto;*/
+            	/*margin-right: 10px;
+            	float: none;
+                -webkit-box-flex:7;*/
+                width: 67%;
+            }
+            #right{
+            	/*width:auto;*/
+            	/* float: none;
+                -webkit-box-flex:3;*/
+                 width: 30%;
+            }
+            #banner{
+				width:100%;
+			
+				height: 0;
+				padding-top: 56%;
+				background-image: url(img/01_s_2x.jpg) ;
+
+			}
+           
+        }
+		/*当屏幕宽度小于960px时 页面的样式*/
+		@media screen and (max-width: 480px) {
+            #content{
+                width: 100%;
+
+            }
+            #left, #right{
+                float: none;
+                width: 100%;
+            }
+            #banner{
+				width:100%;
+				height: 0;
+				padding-top: 56%;
+				background-image: url(img/01_s.jpg) ;
+
+			}
+        }
+        /*当屏幕小于480px时页面显示的样式*/
+	</style>
+</head>
+<body>
+
+    <h3 id="header">页头</h3>
+    <h3 id="title">标题</h3>
+    <div id="banner">
+        <!-- <img src="img/01.jpg" alt=""> -->
+    </div>
+    <div id="content">
+        <div id="left">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+            </p>
+        </div>
+        <div id="right">
+            <p>Donec dolor arcu, interdum sed turpis faucibus, placerat ultricies felis. Donec pulvinar gravida rhoncus. Suspendisse vestibulum est eget dolor lobortis.</p>
+        </div>
+    </div>
+    <h3 id="footer">页脚</h3>
+
+
+</body>
+</html>
