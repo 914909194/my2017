@@ -138,6 +138,9 @@ a{
 .app1{
     overflow: hidden;
 }
+.app2{
+    display: none;
+}
 .app-device{
     float: left;
     width: 35%;
@@ -167,6 +170,31 @@ a{
 .app-content a{
     color: #b89f7a;
     font-size: 14px;
+}
+.col-box{
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    /*justify-content: center;*/
+    -webkit-flex-wrap: wrap;
+}
+.col-box .item{
+    width: 240px;
+    height: 280px;
+    box-shadow: 0 0px 2px #ccc;
+    margin: 15px;
+}
+.col-box .item:nth-child(1){
+    background: pink;
+}
+.col-box .item:nth-child(2){
+    background: paleturquoise;
+}
+.col-box .item:nth-child(3){
+    background:plum;
+}
+
+.col-box .item:nth-child(4){
+    background: #B1D410;
 }
 
 @media screen and (max-width:991px){
@@ -223,6 +251,38 @@ a{
     }
     .con-txt{
         margin: 10px 0 30px 0 ;
+    }
+    .app1{
+        display:none;
+    }
+    .app2{
+        display: block;
+        background: #ccc;
+        overflow: hidden;
+    }
+    .app-content{
+        float:none;
+        width: 100%;
+        margin-top: 0px;
+    }
+    .app-content p{
+        /*width: 100%;*/
+        text-align: center;
+        font-size: 18px;
+    }
+    .app-download{
+        float: right;
+    }
+
+}
+@media screen and (max-width: 667px){
+    .col-box{
+        justify-content: space-between;
+    }
+    .col-box .item{
+        margin:15px 0;
+        width: 136px;
+        height: 220px;
     }
 }
 @media screen and (max-width: 425px) {
