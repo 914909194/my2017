@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机相册</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background: #000;
+		}
+		#img-box{
+			width: 500px;
+			height: 750px;
+			/*background: pink;*/
+			margin:0 auto;
+		}
+		#img-box img{
+			display: block;
+			float: left;
+			border:0;
+		}
+		#big-img{
+			display: none;
+			position: absolute;
+			left: 0;
+			top:0;
+			right: 0;
+			bottom:0;
+			/*background: #ccc;*/
+			text-align: center;
+		}
+		#big-img img{
+			/*position: absolute;
+			top: 50%;
+			left:50%;*/
+			margin-top:125px;
+			/*margin-left: -125px;*/
+		}
+	</style>
+</head>
+<body>
+
+	<div id="img-box">
+		
+	</div>
+	<div id="big-img">
+		<img src="" alt="">
+	</div>
+
+	<script src='js/jquery.min.js'></script>
+	<script src='js/jquery.mobile-1.4.5.min.js'></script>
+	<script>
+	
+			var idx=0;
+			for(var i=0;i<24;i++){
+				$('<img src="" alt="">').attr('src','img/thumbs/'+(i+1)+'.jpg').appendTo('#img-box')
+				
+			}
+				
+			$('#img-box img').on('tap',function(){
+				$('#img-box img').hide();
+				$('#big-img').show();
+				$('#big-img img').attr('src','img/'+($(this).index()+1)+'.jpg')
+				idx=$(this).index();
+			})
+			$('#big-img').on('swipeleft',function(){
+				idx++;
+				if(idx==24){
+					idx=0;
+				}
+				$('#big-img img').attr('src','img/'+(idx+1)+'.jpg');
+				
+			}).on('swiperight',function(){
+				idx--;
+				if(idx==-1){
+					idx=23;
+				}
+				$('#big-img img').attr('src','img/'+(idx+1)+'.jpg')
+			})
+			
+
+	</script>
+
+</body>
+</html>
