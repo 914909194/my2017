@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转小球</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background: skyblue;
+		}
+		ul{
+			list-style: none;
+			width: 80px;
+			height: 80px;
+			/*border: 1px solid #ccc;*/
+			
+			
+		}
+		#ul1{
+			
+			-webkit-perspective:800px;
+			margin:300px auto;
+			position: relative;
+		}
+		#ul2{
+		
+			-webkit-transform-style: preserve-3d;
+			-webkit-animation:run1 8s linear 0s infinite forwards;
+			position: absolute;
+			left: 0;
+			top:0;
+		}
+		#ul3{
+			
+			-webkit-transform-style: preserve-3d;
+			-webkit-animation:run2 12s linear 0s infinite forwards;
+			position: absolute;
+			left: 0;
+			top:0;
+		}
+		#ul2 li{
+			width: 80px;
+			height: 80px;
+			 /*-webkit-transform-style: preserve-3d;*/
+			 /*-webkit-transition:transform 5s ease ;*/
+			background: #000;
+			text-align: center;
+			line-height: 80px;
+			font-size: 50px;
+			color: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#ul3 li{
+			width: 80px;
+			height: 80px;
+			 /*-webkit-transform-style: preserve-3d;*/
+			 /*-webkit-transition:transform 3s ease ;*/
+			text-align: center;
+			line-height: 80px;
+			font-size: 50px;
+			color: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #b50d0d;
+		}
+		
+		@-webkit-keyframes run1{
+			0%{
+				-webkit-transform:rotateY(0deg) ;
+
+			}
+			100%{
+				-webkit-transform: rotateY(360deg) ;
+			}
+		}
+		@-webkit-keyframes run2{
+			0%{
+				-webkit-transform: rotateX(0deg) ;
+
+			}
+			100%{
+				-webkit-transform: rotateX(360deg)  ;
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul1">
+		<ul id="ul2">
+			
+		</ul>
+		<ul id="ul3">
+			
+		</ul>
+	</ul>
+</body>
+<script>
+	var oUl1=document.getElementById('ul1');
+	var oUl2=document.getElementById('ul2');
+	var oUl3=document.getElementById('ul3');
+	var html1='';
+	var html2='';
+
+
+	for(var i=0;i<12;i++){
+		html1+='<li >'+i+'</li>';
+	}
+	oUl2.innerHTML=html1;
+	for(var i=0;i<12;i++){
+		html2+='<li >'+i+'</li>';
+	}
+	oUl3.innerHTML=html2;
+	var aLi1 = oUl2.getElementsByTagName('li');
+	var aLi2= oUl3.getElementsByTagName('li');
+	for(var i=0;i<12;i++){
+		
+		aLi1[i].style.WebkitTransform='rotateY('+(-i*30)+'deg) translateZ(250px)'; 
+	}
+	for(var i=0;i<12;i++){
+		
+		aLi2[i].style.WebkitTransform='rotateX('+(-i*30)+'deg) translateZ(250px)'; 
+	}
+</script>
+</html>
