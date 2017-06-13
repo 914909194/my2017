@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小房子</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.fangzi{
+			width: 960px;
+			height: 1000px;
+			position: relative;
+			margin:50px auto;
+			/*background: pink;*/
+		}
+		.yanchong{
+			width: 100px;
+			height: 50px;
+			border:2px solid #000;
+			position: absolute;
+			top: 0;
+			left:50%;
+		}
+		.fanggai1{
+			width: 500px;
+			border:2px solid #000;
+			position: absolute;
+			left:200px;
+			top: 50px;
+		}
+		.fanggai2{
+			width: 760px;
+			border:2px solid #000;
+			position: absolute;
+			left:75px;
+			top: 180px;
+		}
+		.fanggai3{
+			width: 188px;
+			border:2px solid #000;
+			position: absolute;
+			left:676px;
+			top: 120px;
+			transform: rotate(45deg);
+		}
+		.fanggai4{
+			width: 187px;
+			border:2px solid #000;
+			position: absolute;
+			left:39px;
+			top: 120px;
+			transform: rotate(-45deg);
+		}
+		.qiangbi1{
+			height: 450px;
+			border:2px solid #000;
+			position: absolute;
+			left:130px;
+			top: 180px;
+
+		}
+		.qiangbi2{
+			height: 450px;
+			border:2px solid #000;
+			position: absolute;
+			left:750px;
+			top: 180px;	
+		}
+		.qiangbi3{
+			width: 617px;
+			border:2px solid #000;
+			position: absolute;
+			left:130px;
+			top: 630px;
+		}
+		.chuanghu{
+			width: 300px;
+			height: 200px;
+			border:1px solid #000;
+			position: absolute;
+			left: 150px;
+			top:200px;
+			background: skyblue;
+		}
+		.chaunghu1{
+			width: 98px;
+			height: 98px;
+			border:1px solid #000;
+			float: left;
+		}
+		.men{
+			width: 200px;
+			height: 300px;
+			/*border:1px solid #000;*/
+			position: absolute;
+			left: 490px;
+			top:329px;
+		}
+		.men1{
+			width: 198px;
+			height: 198px;
+			border-top:2px solid #000;
+			border-radius: 50%;
+			background-color:red;
+
+		}
+		.men2{
+			width: 198px;
+			height: 200px;
+			border:2px solid #000;
+			border-top:transparent;
+			position: absolute;
+			perspective: 800px;
+			left: -2px;
+			top: 99px;
+		}
+		.men2 img{
+			width: 198px;
+			height: 200px;
+			transform-origin: center left;
+			transition: transform 1s;
+		}
+		.men2:hover img{
+			transform:rotateY(70deg);
+		}
+		.menba{
+			width: 10px;
+			height: 10px;
+			border:2px solid #000;
+			border-radius: 50%;
+			position: absolute;
+			left: 70%;
+			top:60%;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="fangzi">
+		<div class="yanchong">	</div>
+		<div class="fanggai1"></div>
+		<div class="fanggai2"></div>
+		<div class="fanggai3"></div>
+		<div class="fanggai4"></div>
+		<div class="qiangbi1"></div>
+		<div class="qiangbi2"></div>
+		<div class="qiangbi3"></div>
+		<div class="chuanghu">
+			<div class="chaunghu1"></div>
+			<div class="chaunghu1"></div>
+			<div class="chaunghu1"></div>
+			<div class="chaunghu1"></div>
+			<div class="chaunghu1"></div>
+			<div class="chaunghu1"></div>
+		</div>
+		<div class="men">
+			<div class="men1"></div>
+			<div class="men2">
+				<img src="img/7.jpg" alt="">
+			</div>
+			<div class="menba"></div>
+		</div>
+		
+
+
+	</div>
+</body>
+</html>
