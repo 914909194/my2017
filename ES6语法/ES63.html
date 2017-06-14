@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//map (key values)
+		var m=new Map();
+		m.set('1','a');
+		m.set('2','b');
+		m.set('2','c');//键值重新赋值
+		m.delete('1')//通过键值删除 这里必须字符串‘1’
+		// m.clear();
+		m.set(1,'d');//这里是整形1，区别于字符串’1‘
+		// map允许任何值当他的键 数组 对象等等
+		//通过键值寻找里边的内容 m.get(键值)
+		console.log(m);
+		m.forEach(function(val,key){
+			console.log(key);
+
+		})
+		//箭头函数
+		// m.forEach((val,key)=>{
+		// 	console.log(key);
+		// })
+		// m.forEach(key=>{//一个参数可以省略括号
+		// 	console.log(key);
+		// })
+		// m.forEach(()=>{//没有参数不可以可以省略括号
+		// 	console.log(111);
+		// })
+		// m.forEach(key=>//一个执行体可以省略花括号
+		// 	console.log(key);
+		// )
+		// m.forEach(()=>{//多个执行体不可以省略花括号
+		// 	console.log(111);
+		// 	console.log(221);
+		// })
+	</script>
+</body>
+</html>

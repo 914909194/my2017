@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es6</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul1">
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+<!-- 	var 的变量会变量提升，提到前边定义 但不会赋值 下面的例子输出undefine
+			conlose.log(a);
+			var a=10;
+			let b=5; let的变量不会变量提升 并且是块级作用域 单独的形成了一个作用域
+			外边不能使用  并且不能重复定义 例如 let a=1;let a=2;是错误的语法
+			-->
+
+
+		<!--    var a=0;会报错 局部作用域死区 var的变量进不去 因为里边let了一个a
+				function fn(){
+
+
+					console.log(a);
+					let a=1;
+				}
+ -->
+		<!-- 闭包：
+			一个内部函数引用了一个外部函数局部变量，当外部函数执行后他的局部变量不释放
+
+		 -->
+		 <script>
+		 	// var oUl=document.getElementById('ul1');
+		 	// var oLi=oUl.getElementsByTagName('li');
+		 	// for(let i=0;i<oLi.length;i++){
+		 	// 	oLi[i].onclick=function(){
+		 	// 		console.log(i)
+
+		 	// 	}
+		 	// }
+		 	// // 这样let的变量会输出i 但如果是var 的变量会输出4 let的变量会单独形成一个作用域块
+
+		 	// //const 常量定义
+		 	// const NUM=10;//常量要大写 并且不能重新赋值 怒能变化的值；
+		 	// const OBJ={
+		 	// 	name:'ls',
+		 	// 	age:10
+		 	// }
+		 	// OBJ.name='lizi';
+		 	// console.log(OBJ);
+		 	// // OBJ存储的是一个地址 改变name和地址没关系 所以可以改变里边的值
+
+		 	//  OBJ.freeze();//可以冻结对象 这儿样就不能改变了；
+
+
+
+		 	 class Cat{
+		 	 	constructor(name){
+		 	 		this.name=name;
+
+		 	 	}
+		 	 	say(){
+		 	 		console.log(this.name)
+		 	 	}
+		 	 }
+		 	 var c=new Cat('mimi');
+		 	 c.say();
+
+		 	 class BsCat extends Cat{//继承的语法
+		 	 	constructor(name,age){//构造函数 继承之外还可以传其他参数
+		 	 		super(name);//继承cat的语法super(); 相当于this.name=name;
+		 	 		this.age=age;		 	 	
+		 	 	}
+		 		 // static
+		 		  eat(){
+		 	 		console.log('eatting')	
+		 		 }
+		 	}
+		 	var bsc=new BsCat('bsmimi',5);
+		 	bsc.eat();
+		 	bsc.say();
+		 	//static静态变量
+		 	//set
+		 	var s=new Set();//类似数组的一种数据结构
+		 	s.add(1);
+		 	s.add(2);
+		 	s.add(3);
+		 	s.add(3);//不能存重复的值，只有一个值
+		 	s.clear();
+		 	s.delete(2);//删除的是数值2 不是索引2
+
+		 	console.log(s);
+		 	console.log(s.size);
+		 	console.log(s.has(5));//判断是否有5这个值 返回false
+		 	var keys=s.keys();
+		 	console.log(keys);
+		 	for (key of keys){
+		 		console.log(key);
+		 	}
+
+		 	var values=s.values();//keys和values值是一样的
+		 	var entries=s.entries();//包含了数组中的keys和values;
+		 	for(ens of entries){
+		 		console.log(en[0],en[1]);
+		 	}
+
+		 	s.forEach(function(val,key){//循环的另一张方法
+		 		console.log(val,key);
+		 	})
+
+
+
+		 </script>
+	
+</body>
+</html>

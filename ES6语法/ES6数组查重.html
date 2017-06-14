@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组查重</title>
+</head>
+<body>
+	<script>
+		// var arr=[7,1,2,3,4,1,2,5,3,6,6,7,8,7];
+		// var arr1=[];
+		// var s=new Set();
+		// for(var i=0;i<arr.length;i++){
+		// 	var b=arr[i];
+		// 	s.add(b);
+		// }方法一
+		// for(var i=0;i<arr.length;i++){
+		// 	if(arr1.indexOf(arr[i])==-1){
+		// 		arr1.push(arr[i]);
+		// 	}
+		// }方法二
+		// for(var i=0;i<arr.length;i++){
+		// 	if(i==arr.indexOf(arr[i])){
+		// 		arr1.push(arr[i]);
+		// 	}
+		// }方法三
+		var arr=[7,1,2,3,4,1,2,5,3,6,6,7,8,7];
+		// var s=new Set(arr);方法四
+		var s=new Set(arr);
+		var arr1=Array.from(s);//将Set转化成数组 方法五
+		console.log(arr1);
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+	</ul>
+	<script>
+		var aLi=document.getElementsByTagName('li');
+		for(var i=0;i<aLi.length;i++){
+			// var _this=this;
+			aLi[i].onclick=function(){
+				setTimeout(()=>{
+				console.log(this.innerHTML)
+				//用了箭头函数这里的this就是li标签
+				//不用箭头函数this就是window
+				},1000);
+			}
+			
+		}
+		//箭头函数 定义时指向
+		//匿名函数 运行时执行\
+
+
+		// var aa='my';
+		// var bb='age';
+		// var myage='aaaaaaaa';
+		// // 对象简写形式
+		// var obj={
+		// 	[aa+bb]:'bbbbbbb',
+		// 	age:10,
+		// 	ls:'11111'
+		// }
+		// console.log(obj.myage);
+		// console.log(-0==+0);
+		// console.log(NaN==NaN);
+		// console.log(Object.is(-0,0));
+		// console.log(Object.is(NaN,NaN));
+		// var arr=[4,1,2,3,NaN];
+		// console.log(arr.indexOf(NaN))//会返回-1 没有NaN
+		// var obj={
+		// 	a:1,
+		// 	b:2
+		// }
+		// var oo=Object.assign(obj,{a:3,b:4});//替换对象值
+		// console.log(oo);
+		var str='宝宝心里苦';
+		console.log(str.includes('宝宝',2));//false 从索引2‘心里苦’开始找
+		console.log(str.startsWith('宝宝',2));//false  从索引2‘心里苦’开始找
+		console.log(str.endsWith('宝宝',2));//true 从索引2‘心里苦’里结束前边找 区别和前边不同 面试题
+		console.log(str.repeat(3));
+		var str1=``//字符模板 用这个符号 Tab上边的键
+
+	</script>
+</body>
+</html>
