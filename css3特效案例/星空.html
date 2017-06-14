@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>星空</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			width: 1300px;
+			height: 620px;
+			background: rgba(0,0,0,1);
+		}
+		/*#container{
+			width: 1360px;
+			height: 720px;
+			background: #3f3f3f;
+			position: relative;
+		}*/
+	    div{
+			border-radius: 50%;
+			/*width: 20px;
+			height: 20px;*/
+			background: #fff;
+			position: absolute;
+			box-shadow: 0 0 3px 3px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<script>
+		var oDiv=document.getElementById('container');
+		var screenWidth=document.documentElement.clientWidth||document.body.clientWidth;
+		var screenHeight=document.documentElement.clientHeight||document.body.clientHeigth;
+		console.log(screenHeight)
+		function Leaf(){
+ 			this.width=1+Math.random()*5;
+ 			this.height=1+Math.random()*5;
+ 			this.pos={
+ 				left:Math.random()*(screenWidth-this.width),
+				top:Math.random()*(screenHeight-this.height), 		
+ 			}
+ 			this.speedx=1+(Math.random()-0.5)*30;
+ 			this.speedy=1+(Math.random()-0.5)*20;
+ 			this.div=document.createElement('div');
+			this.div.style.width=this.width+'px';
+			this.div.style.height=this.height+'px';
+			this.div.style.left=this.pos.left+'px';
+			this.div.style.top=this.pos.top+'px';
+		}
+		Leaf.prototype.init=function(){
+			document.body.appendChild(this.div);
+		}
+		Leaf.prototype.fall=function(){
+			var _this=this;
+			setTimeout(function(){
+				clearInterval(_this.timer);
+				_this.timer=setInterval(function(){
+					if(_this.div.offsetTop>screenHeight-_this.height+20||_this.div.offsetLeft>screenWidth-_this.width+20||_this.div.offsetTop<20||_this.div.offsetLeft<20){
+						_this.div.remove();
+						
+						clearInterval(_this.timer);
+
+					}else{
+						_this.div.style.top=_this.div.offsetTop+_this.speedy+'px';
+						_this.div.style.left=_this.div.offsetLeft+_this.speedx+'px';
+					}
+		
+			},30)
+			},1)
+	
+		}
+		var aLeaf=[];
+		// for(var i=0;i<7;i++){
+		// 	var oLeaf=new Leaf();
+		// 	oLeaf.init();
+		// 	aLeaf.push(oLeaf);
+		// }
+		setInterval(function(){
+			var oLeaf=new Leaf();
+			oLeaf.init();
+			aLeaf.push(oLeaf);
+			for(var i=0;i<aLeaf.length;i++){
+		
+			aLeaf[i].fall();
+			}
+		} ,50)
+		document.onclick=function(){
+			
+	}
+
+	</script>
+</body>
+</html>
