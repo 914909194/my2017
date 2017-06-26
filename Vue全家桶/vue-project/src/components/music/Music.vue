@@ -16,6 +16,7 @@
   import CommonFooter from '../common/CommonFooter'
   import Axios from 'axios'
   
+  
 export default {
   data() {
     return {

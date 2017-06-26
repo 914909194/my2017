@@ -8,6 +8,7 @@ import Music from '@/components/music/Music'
 import MusicList from '@/components/music/MusicList'
 import Book from '@/components/book/Book'
 import Photo from '@/components/photo/Photo'
+import photoShow from '@/components/photo/PhotoShow'
 
 Vue.use(Router)
 
@@ -45,7 +46,11 @@ export default new Router({
     ,
     {
       path: '/photo',
-      component: Photo,
-    }
+      component: Photo, 
+    },
+    {
+      path:'/photo/photo_show/:index',
+      component: photoShow,
+    },
   ]
 })
