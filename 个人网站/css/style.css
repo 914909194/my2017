@@ -8,7 +8,7 @@ body {
 	background-color: #161E2C;
 	font-family: 'Open Sans', sans-serif;
 	overflow-x: hidden;
-	background:url(../img/0019.jpeg) no-repeat top center;
+	background:url(../img/page-bg.jpg) no-repeat top center;
 	background-size: cover;
 }
 a:hover, a:focus { 
@@ -95,7 +95,7 @@ a:hover {
 	position: absolute;
 	left: 50%;
 	top:110px;
-	margin-left: -18px;
+	margin-left: -30px;
 	font-size: 20px;
 }
 .contact{
