@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过正则表达式封装getClass</title>
+</head>
+<body>
+<ul>
+	<li class='aa'>11111</li>
+	<li>22222</li>
+	<li class='aabb'>33333</li>
+</ul>
+	<script>
+		// function getClass(cls,context){
+		// 	// if(document.getElementsByClassName){
+		// 	// 	return document.getElementsByClassName(cls);
+		// 	// }else{
+		// 		var obj=context||document;
+		// 		var arr=[];
+		// 		var aTag=obj.getElementsByTagName('*');
+		// 		// console.log(aTag)
+		// 		var reg=new RegExp('\\b'+cls+'\\b');
+		// 		for(var i=0;i<aTag.length;i++){
+		// 			if(reg.test(aTag[i].className)){
+		// 				arr.push(aTag[i]);
+		// 				console.log(arr)
+		// 			}
+		// 		}
+		// 		return arr;
+			
+		// }
+
+		var aLi=getClass('aa');
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].style.background='red';
+		}
+
+
+		function getClass(cls,context){
+			if(document.getElementsByClassName){
+				return document.getElementsByClassName(cls);
+			}else{
+				var obj=context||document;
+				var arr=[];
+				var aTag=context.getElementsByTagName('*');
+				var reg=new RegExp('\\b'+cls+'\\b');
+				for(var i=0;i<aTag.length;i++){
+					if(reg.test(aTag[i].className)){
+						arr.push(aTag[i]);
+					}
+				}
+				return arr;
+			}
+		}
+	</script>
+</body>
+</html>
